@@ -31,7 +31,7 @@
   color: black;
 }
 .halaman {
-  padding: 3rem;
+  padding: 2rem;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
@@ -39,10 +39,8 @@
   color: whitesmoke;
 }
 .halaman h1 {
-  font-size: 150px;
   font-family: "Bangers", cursive;
 }
 .halaman p {
-  font-size: 30px;
   font-family: "Marck Script", cursive;
 }
