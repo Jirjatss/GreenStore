@@ -5,9 +5,11 @@
 #jumbotron {
   background-image: url(Image/harvest-still-life-vegetables-fresh-wallpaper-preview.jpg);
   max-width: 100%;
-  padding: 1rem;
+  padding-top: 15rem;
+  padding-bottom: 5rem;
 }
 .navbar {
+  margin-top: 1rem;
   margin-left: 5%;
   margin-bottom: 100px;
   background-color: rgba(0, 0, 0, 0.4);
