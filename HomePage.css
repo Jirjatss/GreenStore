@@ -4,7 +4,6 @@
 }
 #jumbotron {
   background-image: url(Image/harvest-still-life-vegetables-fresh-wallpaper-preview.jpg);
-  max-width: 100%;
   padding-top: 15rem;
   padding-bottom: 5rem;
 }
@@ -40,6 +39,7 @@
   margin-bottom: 130px;
   color: whitesmoke;
 }
+
 .halaman h1 {
   font-family: "Bangers", cursive;
 }
