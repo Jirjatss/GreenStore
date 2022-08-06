@@ -4,12 +4,12 @@
 }
 #jumbotron {
   background-image: url(Image/harvest-still-life-vegetables-fresh-wallpaper-preview.jpg);
-  padding-top: 5rem;
+  padding-top: 6rem;
+  padding-bottom: 0.5rem;
 }
 .navbar {
   margin-top: 1rem;
   margin-left: 5%;
-  margin-bottom: 100px;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   padding: 1rem;
@@ -22,6 +22,13 @@
 }
 .navbar a:hover {
   color: yellowgreen;
+}
+.dropdown a {
+  color: black;
+}
+.dropdown a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: black;
 }
 /* Keranjang Saya */
 .text-judul-halaman {
