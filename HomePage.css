@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
 }
+/* Navbar */
 #jumbotron {
   background-image: url(Image/harvest-still-life-vegetables-fresh-wallpaper-preview.jpg);
   padding-top: 15rem;
@@ -51,6 +52,8 @@
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
+/* Akhir Navbar */
+/* Poupler */
 
 #Populer .container {
   font-family: "Sarabun", sans-serif;
@@ -64,4 +67,25 @@
 .Populer-caption {
   text-align: center;
   background-color: #fff;
+}
+/* Akhir Populer */
+/* Team */
+.team-member {
+  text-align: center;
+}
+.team-member img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 0.5rem;
+  border-radius: 100%;
+  border: 10px double black;
+}
+#team {
+  font-family: "Sarabun", sans-serif;
+}
+
+#team .container {
+  font-family: "Sarabun", sans-serif;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
