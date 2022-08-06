@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#jumbotron {
+  background-image: url(Image/harvest-still-life-vegetables-fresh-wallpaper-preview.jpg);
+  width: 100%;
+  padding: 1rem;
+}
+.navbar {
+  margin-left: 5%;
+  margin-bottom: 100px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 1rem;
+  width: 90%;
+}
+.navbar a {
+  font-family: "Sarabun", sans-serif;
+  font-size: 20px;
+  color: whitesmoke;
+}
+.navbar a:hover {
+  color: yellowgreen;
+}
+.dropdown a {
+  color: black;
+}
+.dropdown a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: black;
+}
+.halaman {
+  padding: 3rem;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-bottom: 130px;
+  color: whitesmoke;
+}
+.halaman h1 {
+  font-size: 150px;
+  font-family: "Bangers", cursive;
+}
+.halaman p {
+  font-size: 30px;
+  font-family: "Marck Script", cursive;
+}
