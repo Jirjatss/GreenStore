@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    margin-left: 5%;
+    margin-bottom: 30px;
+    background-image: url(Image/harvest-still-life-vegetables-fresh-wallpaper-preview.jpg);
+    border-radius: 10px;
+    padding: 1rem;
+    width: 90%;
+}
+.navbar-brand {
+    color: white;
+}
+/* Keranjang Saya */
+.text-judul-halaman {
+    margin-left: 5%;
+    margin-top: 0px;
+    font-family: "Sarabun", sans-serif;
+    font-weight: bold;
+}
+.table{
+    margin-left: 5%;
+    margin-top: 0px;
+    font-family: "Sarabun", sans-serif;
+    font-weight: bold;
+}
+
+  
