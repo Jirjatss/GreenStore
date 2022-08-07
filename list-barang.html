@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Barang</title>
+    <link rel="stylesheet" href="list-barang.css" />
+    <link rel="stylesheet" href="vendor/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Gloria+Hallelujah&family=Marck+Script&family=Sarabun:wght@100&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+     <!-- Navbar -->
+     <section id="list-barang" class="jumbotron jumbotron-fluid">
+        <nav class="navbar navbar-expand-lg fixed-top">
+          <div class="container">
+            <a class="navbar-brand" href="HomePage.html">GreenStore</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon" style="color: whitesmoke; font-family: Sarabun, sans-serif">Menu</span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <div class="dropdown">
+                  <a style="color: white" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"> List Barang </a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="#sayur">Sayur</a></li>
+                    <li><a class="dropdown-item" href="#buah">Buah</a></li>
+                  </ul>
+                </div>
+                <div class="dropdown">
+                  <a style="color: white" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"> Profil </a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="keranjang-belanja.html">Keranjang</a></li>
+                    <li><a class="dropdown-item" href="checkout.html">Pemesanan</a></li>
+                  </ul>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- Judul halaman -->
+        <div class="row" id="judul-halaman">
+            <div class="col-12">
+                <h1 class="text-judul-halaman">List Barang</h1>
+            </div>
+        <!-- Akhir Navbar -->
+        <!-- List Barang -->
+        <section class="page-section bg-light" id="Barang">
+            <!-- sayur -->
+            <div class="container" id="sayur">
+              <div class="text-center">
+                <h1 id="tagline" class="section-heading">Sayur</h1>
+                <hr />
+              </div>
+              <div class="row d-flex justify-content-center">
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <!-- Barang item 1-->
+                  <div class="Barang-item">
+                    <a class="Barang-link" data-bs-toggle="modal" href="#BarangModal1">
+                      <div class="Barang-hover">
+                        <div class="Barang-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="Image/Sayur/kangkung.jpeg" alt="..." />
+                    </a>
+                    <div class="Barang-caption">
+                      <div class="Barang-caption-heading">Kangkung</div>
+                      <div class="Barang-caption-subheading text-muted">Sayur</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <!-- Barang item 2-->
+                  <div class="Barang-item">
+                    <a class="Barang-link" data-bs-toggle="modal" href="#BarangModal2">
+                      <div class="Barang-hover">
+                        <div class="Barang-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="Image/Sayur/tomat.jpg" alt="..." />
+                    </a>
+                    <div class="Barang-caption">
+                      <div class="Barang-caption-heading">Tomat</div>
+                      <div class="Barang-caption-subheading text-muted">Sayur</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <!-- Barang item 3-->
+                  <div class="Barang-item">
+                    <a class="Barang-link" data-bs-toggle="modal" href="#BarangModal3">
+                      <div class="Barang-hover">
+                        <div class="Barang-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="Image/Sayur/bayam.JPG" alt="..." />
+                    </a>
+                    <div class="Barang-caption">
+                      <div class="Barang-caption-heading">Bayam</div>
+                      <div class="Barang-caption-subheading text-muted">Sayur</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <!-- Barang item 4-->
+                  <div class="Barang-item">
+                    <a class="Barang-link" data-bs-toggle="modal" href="#BarangModal4">
+                      <div class="Barang-hover">
+                        <div class="Barang-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="Image/Buah/Naga.jpg" alt="..." />
+                    </a>
+                    <div class="Barang-caption">
+                      <div class="Barang-caption-heading">Buah Naga</div>
+                      <div class="Barang-caption-subheading text-muted">Buah</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <!-- Barang item 5-->
+                  <div class="Barang-item">
+                    <a class="Barang-link" data-bs-toggle="modal" href="#BarangModal5">
+                      <div class="Barang-hover">
+                        <div class="Barang-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="Image/Buah/jeruk.jpg" alt="..." />
+                    </a>
+                    <div class="Barang-caption">
+                      <div class="Barang-caption-heading">Jeruk Orange</div>
+                      <div class="Barang-caption-subheading text-muted">Buah</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <!-- Barang item 6-->
+                  <div class="Barang-item">
+                    <a class="Barang-link" data-bs-toggle="modal" href="#BarangModal6">
+                      <div class="Barang-hover">
+                        <div class="Barang-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="Image/Buah/duren.jpg" alt="..." />
+                    </a>
+                    <div class="Barang-caption">
+                      <div class="Barang-caption-heading">Durian</div>
+                      <div class="Barang-caption-subheading text-muted">Buah</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <!-- Barang item 7-->
+                  <div class="Barang-item">
+                    <a class="Barang-link" data-bs-toggle="modal" href="#BarangModal7">
+                      <div class="Barang-hover">
+                        <div class="Barang-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="Image/Buah/duren.jpg" alt="..." />
+                    </a>
+                    <div class="Barang-caption">
+                      <div class="Barang-caption-heading">Durian</div>
+                      <div class="Barang-caption-subheading text-muted">Buah</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <!-- Barang item 7-->
+                  <div class="Barang-item">
+                    <a class="Barang-link" data-bs-toggle="modal" href="#BarangModal7">
+                      <div class="Barang-hover">
+                        <div class="Barang-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="Image/Buah/duren.jpg" alt="..." />
+                    </a>
+                    <div class="Barang-caption">
+                      <div class="Barang-caption-heading">Durian</div>
+                      <div class="Barang-caption-subheading text-muted">Buah</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <!-- Barang item 7-->
+                  <div class="Barang-item">
+                    <a class="Barang-link" data-bs-toggle="modal" href="#BarangModal7">
+                      <div class="Barang-hover">
+                        <div class="Barang-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="Image/Buah/duren.jpg" alt="..." />
+                    </a>
+                    <div class="Barang-caption">
+                      <div class="Barang-caption-heading">Durian</div>
+                      <div class="Barang-caption-subheading text-muted">Buah</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <!-- Barang item 7-->
+                  <div class="Barang-item">
+                    <a class="Barang-link" data-bs-toggle="modal" href="#BarangModal7">
+                      <div class="Barang-hover">
+                        <div class="Barang-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="Image/Buah/duren.jpg" alt="..." />
+                    </a>
+                    <div class="Barang-caption">
+                      <div class="Barang-caption-heading">Durian</div>
+                      <div class="Barang-caption-subheading text-muted">Buah</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Akhir Sayur -->
+            <!-- Buah -->
+            <div class="container" id="buah">
+              <div class="text-center">
+                <h1 id="tagline" class="section-heading">Buah</h1>
+                <hr />
+              </div>
+              <div class="row d-flex justify-content-center">
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <!-- Barang item 1-->
+                  <div class="Barang-item">
+                    <a class="Barang-link" data-bs-toggle="modal" href="#BarangModal1">
+                      <div class="Barang-hover">
+                        <div class="Barang-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="Image/Sayur/kangkung.jpeg" alt="..." />
+                    </a>
+                    <div class="Barang-caption">
+                      <div class="Barang-caption-heading">Kangkung</div>
+                      <div class="Barang-caption-subheading text-muted">Sayur</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <!-- Barang item 2-->
+                  <div class="Barang-item">
+                    <a class="Barang-link" data-bs-toggle="modal" href="#BarangModal2">
+                      <div class="Barang-hover">
+                        <div class="Barang-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="Image/Sayur/tomat.jpg" alt="..." />
+                    </a>
+                    <div class="Barang-caption">
+                      <div class="Barang-caption-heading">Tomat</div>
+                      <div class="Barang-caption-subheading text-muted">Sayur</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <!-- Barang item 3-->
+                  <div class="Barang-item">
+                    <a class="Barang-link" data-bs-toggle="modal" href="#BarangModal3">
+                      <div class="Barang-hover">
+                        <div class="Barang-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="Image/Sayur/bayam.JPG" alt="..." />
+                    </a>
+                    <div class="Barang-caption">
+                      <div class="Barang-caption-heading">Bayam</div>
+                      <div class="Barang-caption-subheading text-muted">Sayur</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <!-- Barang item 4-->
+                  <div class="Barang-item">
+                    <a class="Barang-link" data-bs-toggle="modal" href="#BarangModal4">
+                      <div class="Barang-hover">
+                        <div class="Barang-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="Image/Buah/Naga.jpg" alt="..." />
+                    </a>
+                    <div class="Barang-caption">
+                      <div class="Barang-caption-heading">Buah Naga</div>
+                      <div class="Barang-caption-subheading text-muted">Buah</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <!-- Barang item 5-->
+                  <div class="Barang-item">
+                    <a class="Barang-link" data-bs-toggle="modal" href="#BarangModal5">
+                      <div class="Barang-hover">
+                        <div class="Barang-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="Image/Buah/jeruk.jpg" alt="..." />
+                    </a>
+                    <div class="Barang-caption">
+                      <div class="Barang-caption-heading">Jeruk Orange</div>
+                      <div class="Barang-caption-subheading text-muted">Buah</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <!-- Barang item 6-->
+                  <div class="Barang-item">
+                    <a class="Barang-link" data-bs-toggle="modal" href="#BarangModal6">
+                      <div class="Barang-hover">
+                        <div class="Barang-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="Image/Buah/duren.jpg" alt="..." />
+                    </a>
+                    <div class="Barang-caption">
+                      <div class="Barang-caption-heading">Durian</div>
+                      <div class="Barang-caption-subheading text-muted">Buah</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <!-- Barang item 7-->
+                  <div class="Barang-item">
+                    <a class="Barang-link" data-bs-toggle="modal" href="#BarangModal7">
+                      <div class="Barang-hover">
+                        <div class="Barang-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="Image/Buah/duren.jpg" alt="..." />
+                    </a>
+                    <div class="Barang-caption">
+                      <div class="Barang-caption-heading">Durian</div>
+                      <div class="Barang-caption-subheading text-muted">Buah</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <!-- Barang item 7-->
+                  <div class="Barang-item">
+                    <a class="Barang-link" data-bs-toggle="modal" href="#BarangModal7">
+                      <div class="Barang-hover">
+                        <div class="Barang-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="Image/Buah/duren.jpg" alt="..." />
+                    </a>
+                    <div class="Barang-caption">
+                      <div class="Barang-caption-heading">Durian</div>
+                      <div class="Barang-caption-subheading text-muted">Buah</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <!-- Barang item 7-->
+                  <div class="Barang-item">
+                    <a class="Barang-link" data-bs-toggle="modal" href="#BarangModal7">
+                      <div class="Barang-hover">
+                        <div class="Barang-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="Image/Buah/duren.jpg" alt="..." />
+                    </a>
+                    <div class="Barang-caption">
+                      <div class="Barang-caption-heading">Durian</div>
+                      <div class="Barang-caption-subheading text-muted">Buah</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <!-- Barang item 7-->
+                  <div class="Barang-item">
+                    <a class="Barang-link" data-bs-toggle="modal" href="#BarangModal7">
+                      <div class="Barang-hover">
+                        <div class="Barang-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="Image/Buah/duren.jpg" alt="..." />
+                    </a>
+                    <div class="Barang-caption">
+                      <div class="Barang-caption-heading">Durian</div>
+                      <div class="Barang-caption-subheading text-muted">Buah</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        <!-- Akhir List Barang -->
+   <script src="vendor/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.js" ></script>    
+  </body>
+</html>
