@@ -50,3 +50,9 @@ body {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
 }
+.text-dark {
+  text-align: center;
+  margin-top: 0px;
+  font-family: "Sarabun", sans-serif;
+  font-weight: bold;
+}

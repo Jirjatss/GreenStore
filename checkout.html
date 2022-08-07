@@ -40,6 +40,71 @@
             </ul>
         </div>
       </nav>
+      <!--Judul Halaman-->
+      <div class="row" id="judul-halaman">
+        <div class="col-12">
+            <h1 class="text-judul-halaman">Pembayaran</h1>
+        </div>
+      </section>
+      <!-- Akhir judul Halaman -->
+      <!-- Pengisian Alamat dan Nama Penerima -->
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Nama Penerima</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">Enter your full name.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Masukkan Alamat Lengkap Pengirim</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We will never share your address with others</div>
+        </div>
+      </form>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Metode Pembayaran</option>
+        <option value="1">COD(Bayar Di Tempat)</option>
+        <option value="2">Transfer Bank</option>
+        <option value="3">Bayar Tunai DiMitra/Agen</option>
+        <option value="3">Kartu Kredit/Debit</option>
+      </select>
+      <div id="emailHelp" class="form-text">Pilih Salah Satu</div>
+      <!-- Total Harga dan CheckOut -->
+     <div class="row">
+      <div class="container bg-light">
+        <div class="row">
+          <div class="col-12 p-footer-gray bg-light">
+            <div class="table-responsive">
+              <h5 class="text-dark">Rincian Pembayaran</h5>
+            <table class="table">
+              <thead>
+                <tr></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><b class="">Jumlah Barang</b></td>
+                  <td class="text-dark"> 1 </td>
+                </tr>
+                <tr>
+                  <td><b class="">Sub Total Produk</b></td>
+                  <td class="text-dark">Rp. </td>
+                </tr>
+                <tr>
+                  <td><b class="">Biaya Pengiriman</b></td>
+                  <td class="text-dark">Rp. </td>
+                </tr>
+                <tr>
+                  <td class=""><b>Total Pembayaran</b></td>
+                  <td class="text-dark">Rp. </td>
+                </tr>
+              </tbody>
+            </table>
+            <a class="btn m-1 w-100 btn-success" href="#"><i class="fa fa-fw fa-shopping-cart"></i>CheckOut</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Akhir Total Harga dan CheckOut -->
       <script src="vendor/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
   </body>
 </html>
