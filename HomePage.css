@@ -32,20 +32,22 @@
   background-color: rgba(0, 0, 0, 0.1);
   color: black;
 }
-.halaman {
+.masthead .halaman {
   padding: 2rem;
-  border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
   margin-bottom: 130px;
   color: whitesmoke;
 }
 
-.halaman h1 {
+.halaman .masthead-subheading {
   font-family: "Bangers", cursive;
+  font-size: 5rem;
+  width: 100%;
 }
-.halaman p {
+.halaman .masthead-heading {
   font-family: "Marck Script", cursive;
+  font-size: 2rem;
+  width: 100%;
 }
 #Fitur .container {
   font-family: "Sarabun", sans-serif;
