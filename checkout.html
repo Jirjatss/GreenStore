@@ -47,32 +47,39 @@
         </div>
       </section>
       <!-- Akhir judul Halaman -->
+
       <!-- Pengisian Alamat dan Nama Penerima -->
-      <form>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Nama Penerima</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">Enter your full name.</div>
+      <div class="row">
+        <div class="col-12">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Nama Penerima</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">Enter your full name.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Masukkan Alamat Lengkap Pengirim</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We will never share your address with others</div>
+            </div>
+          </form>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Metode Pembayaran</option>
+            <option value="1">COD(Bayar Di Tempat)</option>
+            <option value="2">Transfer Bank</option>
+            <option value="3">Bayar Tunai DiMitra/Agen</option>
+            <option value="3">Kartu Kredit/Debit</option>
+          </select>
+          <div id="emailHelp" class="form-text">Pilih Salah Satu</div>
         </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Masukkan Alamat Lengkap Pengirim</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">We will never share your address with others</div>
-        </div>
-      </form>
-      <select class="form-select" aria-label="Default select example">
-        <option selected>Metode Pembayaran</option>
-        <option value="1">COD(Bayar Di Tempat)</option>
-        <option value="2">Transfer Bank</option>
-        <option value="3">Bayar Tunai DiMitra/Agen</option>
-        <option value="3">Kartu Kredit/Debit</option>
-      </select>
-      <div id="emailHelp" class="form-text">Pilih Salah Satu</div>
+      </div>
+      <!-- Akhir Pengisian Alamat dan Nama Penerima -->
+
       <!-- Total Harga dan CheckOut -->
      <div class="row">
       <div class="container bg-light">
         <div class="row">
-          <div class="col-12 p-footer-gray bg-light">
+          <div class="col-10 p-footer-gray bg-light">
             <div class="table-responsive">
               <h5 class="text-dark">Rincian Pembayaran</h5>
             <table class="table">
