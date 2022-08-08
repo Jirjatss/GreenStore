@@ -133,7 +133,7 @@ form .field {
   left: 0;
   width: 0%;
   height: 2px;
-  background: yellowgreen;
+  background: green;
   transition: 0.5s;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
@@ -144,7 +144,7 @@ form .field {
 .field input:focus ~ label,
 .field input:valid ~ label {
   top: -1px;
-  color: yellowgreen;
+  color: green;
   font-size: 12px;
   font-weight: 600;
 }
@@ -155,7 +155,7 @@ form .field {
 
 form .button,
 #tmbl-regist {
-  background-color: yellowgreen;
+  background-color: green;
   border: none;
   padding: 10px 20px;
   border-radius: 15px;
