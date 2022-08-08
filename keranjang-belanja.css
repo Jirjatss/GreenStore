@@ -56,3 +56,14 @@ body {
   font-family: "Sarabun", sans-serif;
   font-weight: bold;
 }
+/* Gambar */
+.img-keranjang {
+  width: 100px;
+  border-radius: 10px;
+}
+/* akhir gambar */
+.form-check {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
