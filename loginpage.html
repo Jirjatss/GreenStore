@@ -54,67 +54,59 @@
           </div>
         </div>
       </nav>
-      <header class="masthead">
-        <div class="container-fluid halaman">
-          <div style="background-color: rgba(0, 0, 0, 0.5); border-radius: 10px">
-            <div class="masthead-subheading">Green Store</div>
-            <div style="z-index: 1" class="masthead-heading">Beli Semaunya, Bayar Seadanya</div>
-          </div>
-        </div>
-      </header>
     </section>
     <!-- Akhir Navbar -->
 
     <!-- awal login page -->
     <div class="tengah">
-        <div class="logregist" id="loginpage">
-          <div class="deskripsi">
-            <h1 class="teks">Login</h1>
-          </div>
-          <br />
-          <form action="" id="form">
-            <div class="field">
-              <input type="text" id="nama" name="nama" class="input" required />
-              <span class="garis"></span>
-              <label>Username</label>
-            </div>
-            <div class="field">
-              <input type="password" id="password" name="pass" class="input password" required />
-              <span class="garis"></span>
-              <label for="">Password</label>
-            </div>
-            <p style="font-size: 250">Belum punya akun? <a href="#register" style="text-decoration: none; color: yellowgreen; font-size: 250">Daftar Sekarang!</a></p>
-            <input id="submit" type="submit" class="button" value="Masuk" />
-            <div id="hasil" class="hasil"></div>
-          </form>
+      <div class="logregist" id="loginpage">
+        <div class="deskripsi">
+          <h1 class="teks">Login</h1>
         </div>
-        <!-- akhir login page -->
-        <!-- awal registrasi -->
-        <form class="logregist" id="registrasi">
-          <div class="mb-3">
-            <label for="regemail" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="regemail" aria-describedby="emailHelp" />
+        <br />
+        <form action="" id="form">
+          <div class="field">
+            <input type="text" id="nama" name="nama" class="input" required />
+            <span class="garis"></span>
+            <label>Username</label>
           </div>
-          <div class="mb-3">
-            <label for="regnama" class="form-label">Nama</label>
-            <input type="email" class="form-control" id="regnama" aria-describedby="emailHelp" />
+          <div class="field">
+            <input type="password" id="password" name="pass" class="input password" required />
+            <span class="garis"></span>
+            <label for="">Password</label>
           </div>
-          <div class="mb-3">
-            <label for="regpassword" class="form-label">Password</label>
-            <input type="password" class="form-control" id="regpassword" />
-          </div>
-          <button type="submit" class="btn" id="tmbl-regist">Submit</button>
+          <p style="font-size: 250">Belum punya akun? <a href="#register" style="text-decoration: none; color: yellowgreen; font-size: 250">Daftar Sekarang!</a></p>
+          <input id="submit" type="submit" class="button" value="Masuk" />
+          <div id="hasil" class="hasil"></div>
         </form>
+      </div>
+      <!-- akhir login page -->
+      <!-- awal registrasi -->
+      <form class="logregist" id="registrasi">
+        <div class="mb-3">
+          <label for="regemail" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="regemail" aria-describedby="emailHelp" />
+        </div>
+        <div class="mb-3">
+          <label for="regnama" class="form-label">Nama</label>
+          <input type="email" class="form-control" id="regnama" aria-describedby="emailHelp" />
+        </div>
+        <div class="mb-3">
+          <label for="regpassword" class="form-label">Password</label>
+          <input type="password" class="form-control" id="regpassword" />
+        </div>
+        <button type="submit" class="btn" id="tmbl-regist">Submit</button>
+      </form>
     </div>
     <!-- akhir registrasi-->
 
     <script src="vendor/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
     <!-- untuk ngeshow registrasi  -->
-    <script>     
-    function showhide(id) {
+    <script>
+      function showhide(id) {
         var e = document.getElementById(id);
-        e.style.display = (e.style.display == 'block') ? 'none' : 'block';
-     }
-     </script>
+        e.style.display = e.style.display == "block" ? "none" : "block";
+      }
+    </script>
   </body>
 </html>

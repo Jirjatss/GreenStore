@@ -5,8 +5,7 @@
 /* Navbar */
 #jumbotron {
   background-image: url(Image/harvest-still-life-vegetables-fresh-wallpaper-preview.jpg);
-  padding-top: 15rem;
-  padding-bottom: 5rem;
+  padding-bottom: 10rem;
 }
 .navbar {
   margin-top: 1rem;
@@ -58,10 +57,10 @@
 
 /* login page  */
 .tengah {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .logregist {
   max-width: 700px;
@@ -154,7 +153,8 @@ form .field {
   width: 100%;
 }
 
-form .button ,#tmbl-regist{
+form .button,
+#tmbl-regist {
   background-color: yellowgreen;
   border: none;
   padding: 10px 20px;
@@ -176,14 +176,14 @@ form .button ,#tmbl-regist{
   -o-transition: 0.5s;
 }
 
-.button:hover, #tmbl-regist:hover {
+.button:hover,
+#tmbl-regist:hover {
   transform: scale(1.1, 1.1);
 }
 
 #tmbl-regist {
-    
-    width: min-content;
+  width: min-content;
 }
 #registrasi {
-    display: none;
+  display: none;
 }
