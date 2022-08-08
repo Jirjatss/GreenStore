@@ -4,6 +4,7 @@
 }
 #jumbotron {
   background-image: url(Image/harvest-still-life-vegetables-fresh-wallpaper-preview.jpg);
+  width: 100%;
   padding-top: 6rem;
   padding-bottom: 0.5rem;
 }
@@ -45,4 +46,18 @@
   margin-top: 50px;
   font-family: "Sarabun", sans-serif;
   font-weight: bold;
+}
+
+/* konten */
+form {
+  padding: 2rem;
+}
+#rincianpembayaran {
+  margin-top: -5rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
+  font-size: 0.8rem;
+}
+.bg-light {
+  background-color: aqua;
 }
