@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* Navbar */
+#jumbotron {
+  background-image: url(Image/harvest-still-life-vegetables-fresh-wallpaper-preview.jpg);
+  padding-top: 15rem;
+  padding-bottom: 5rem;
+}
+.navbar {
+  margin-top: 1rem;
+  margin-left: 5%;
+  margin-bottom: 100px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 1rem;
+  width: 90%;
+}
+.navbar a {
+  font-family: "Sarabun", sans-serif;
+  font-size: 20px;
+  color: whitesmoke;
+}
+.navbar a:hover {
+  color: yellowgreen;
+}
+.dropdown a {
+  color: black;
+}
+.dropdown a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: black;
+}
+.masthead .halaman {
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 130px;
+  color: whitesmoke;
+}
+
+.halaman .masthead-subheading {
+  font-family: "Bangers", cursive;
+  font-size: 5rem;
+  width: 100%;
+}
+.halaman .masthead-heading {
+  font-family: "Marck Script", cursive;
+  font-size: 2rem;
+  width: 100%;
+}
+#Fitur .container {
+  font-family: "Sarabun", sans-serif;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+/* Akhir Navbar */
+
+/* login page  */
+.tengah {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logregist {
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  -webkit-border-radius: ;
+  -moz-border-radius: ;
+  -ms-border-radius: ;
+  -o-border-radius: ;
+}
+.deskripsi {
+  display: flex;
+  flex-direction: column;
+}
+.deskripsi .teks {
+  margin: 5px;
+}
+.deskripsi h1 {
+  align-self: center;
+}
+.form {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+form .field {
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 10px 0;
+}
+.field input {
+  width: 100%;
+  padding: 0 5px;
+  height: 35px;
+  font-size: 15px;
+  border: none;
+  background: none;
+  outline: none;
+}
+.field label {
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  color: #adadad;
+  font-size: 15px;
+  transform: translatey(-50%);
+  -webkit-transform: translatey(-50%);
+  -moz-transform: translatey(-50%);
+  -ms-transform: translatey(-50%);
+  -o-transform: translatey(-50%);
+  pointer-events: none;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.field span::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: yellowgreen;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.field input:focus ~ label,
+.field input:valid ~ label {
+  top: -1px;
+  color: yellowgreen;
+  font-size: 12px;
+  font-weight: 600;
+}
+.field input:focus ~ span::before,
+.field input:valid ~ span::before {
+  width: 100%;
+}
+
+form .button ,#tmbl-regist{
+  background-color: yellowgreen;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  color: #fff;
+  width: 100%;
+  position: relative;
+  margin: 10px;
+  margin-left: 0;
+  cursor: pointer;
+  transition: 0.5s;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.button:hover, #tmbl-regist:hover {
+  transform: scale(1.1, 1.1);
+}
+
+#tmbl-regist {
+    
+    width: min-content;
+}
+#registrasi {
+    display: none;
+}
