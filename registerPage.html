@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>login page</title>
-    <link rel="stylesheet" href="loginpage.css" />
+    <link rel="stylesheet" href="registerPage.css" />
     <link rel="stylesheet" href="vendor/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Gloria+Hallelujah&family=Marck+Script&family=Sarabun:wght@100&display=swap" rel="stylesheet" />
   </head>
   <body>
+    <!-- Navbar -->
     <section id="jumbotron" class="jumbotron jumbotron-fluid">
       <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
@@ -41,13 +42,14 @@
         </div>
       </nav>
     </section>
-    <section id="login">
+    <!-- AkhirNavbar -->
+    <section id="register">
       <div class="container block">
         <div class="row">
           <div class="col-lg-6 col-sm-12">
             <header class="masthead">
               <div class="container-fluid halaman">
-                <div style="background-color: rgba(0, 0, 0, 0.5); border-radius: 10px;">
+                <div style="background-color: rgba(0, 0, 0, 0.5); border-radius: 10px">
                   <div class="masthead-subheading">Green Store</div>
                   <div style="z-index: 1" class="masthead-heading">Beli Semaunya, Bayar Seadanya</div>
                 </div>
@@ -57,23 +59,32 @@
           <div class="col-lg-6 col-sm-12">
             <form id="form">
               <fieldset>
-                <legend><b>Masuk</b></legend>
+                <legend><b>Daftar</b></legend>
                 <div class="field">
-                  <label>Masukkan Email</label><br /><br>
+                  <label>Nama</label><br /><br />
+                  <input id="nama" type="text" name="nama" /><br />
+                </div>
+                <div class="field">
+                  <label>Email</label><br /><br />
                   <input id="email" type="email" name="email" /><br />
                 </div>
                 <div class="field">
-                  <label>Masukkan Password</label><br /><br>
+                  <label>Password</label><br /><br />
                   <input id="password" type="password" name="password" /><br />
+                </div>
+                <div class="field">
+                  <label>Konfirmasi Password</label><br /><br />
+                  <input id="konfirpassword" type="password" name="konfirpassword" /><br />
                 </div>
                 <div>
                   <p id="hasil"></p>
                 </div>
-                <p style="font-size: 250">Belum punya akun? <a href="registerPage.html" style="text-decoration: none; color: green; font-size: 250">Daftar Sekarang!</a></p>
+                <p style="font-size: 250">Belum punya akun? <a href="#register" style="text-decoration: none; color: green; font-size: 250">Daftar Sekarang!</a></p>
                 <input id="submit" type="submit" class="button" value="Masuk" />
                 <div id="hasil" class="hasil"></div>
               </fieldset>
             </form>
+          </div>
         </div>
       </div>
     </section>

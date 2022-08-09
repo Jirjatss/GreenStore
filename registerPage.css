@@ -30,7 +30,7 @@
   background-color: rgba(0, 0, 0, 0.1);
   color: black;
 }
-#login {
+#register {
   margin-top: 10rem;
   margin-bottom: 5rem;
 }
@@ -43,12 +43,18 @@
 /* masthead*/
 
 .masthead {
+  padding-top: 10rem !important;
   padding: 4rem;
-  background-image: url(Image/1.jpg);
+  background-image: url(Image/2.jpg);
   text-align: center;
   color: whitesmoke;
   width: 100%;
   height: 100%;
+}
+@media screen and (max-width: 991px) {
+  .masthead {
+    padding-top: 5rem !important;
+  }
 }
 
 .halaman .masthead-subheading {
@@ -59,9 +65,6 @@
   font-family: "Marck Script", cursive;
   font-size: 1.5rem;
   width: 100%;
-}
-.col-6 {
-  height: 400px;
 }
 
 /* form */
@@ -74,9 +77,8 @@ form {
   text-align: center;
 }
 .tengah {
-  height: 100vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -182,7 +184,6 @@ body {
   background-color: #000;
   font-family: Open Sans, sans-serif;
 }
-<<<<<<< HEAD
 .block {
   position: relative;
   background: white;
@@ -216,43 +217,4 @@ body {
 }
 .block:after {
   filter: blur(40px);
-=======
-#tengahreg img, #tengahpage img {
-  width: 50%;
-  height: 100vh;
-  object-fit: cover;
-  position: relative;
-}
-
-@media (max-width: 550px){
-#tengahreg img, #loginpage img {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  position: absolute;
-  }
-.field label {
-  position: absolute;
-  top: 50%;
-  left: 4px;
-  color: #fff;
-  font-size: 15px;
-  transform: translatey(-50%);
-  -webkit-transform: translatey(-50%);
-  -moz-transform: translatey(-50%);
-  -ms-transform: translatey(-50%);
-  -o-transform: translatey(-50%);
-  pointer-events: none;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
-}
-form .field {
-  position: relative;
-  border-bottom: 2px solid #fff;
-  margin: 10px 0;
-}
->>>>>>> 814f0d4775142a869aea3dc28a50a04dc1420a85
 }
