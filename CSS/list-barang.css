@@ -2,16 +2,13 @@
   margin: 0;
   padding: 0;
 }
-/* Navbar */
-#jumbotron {
-  background-image: url(Image/harvest-still-life-vegetables-fresh-wallpaper-preview.jpg);
-  padding-top: 15rem;
-  padding-bottom: 5rem;
+#list-barang {
+  padding-top: 6rem;
+  padding-bottom: 0.5rem;
 }
 .navbar {
   margin-top: 1rem;
   margin-left: 5%;
-  margin-bottom: 100px;
   background-color: rgb(0, 0, 0, 0.7);
   border-radius: 10px;
   padding: 1rem;
@@ -32,56 +29,38 @@
   background-color: rgba(0, 0, 0, 0.1);
   color: black;
 }
-.masthead .halaman {
-  padding: 2rem;
+/* Judul Halaman */
+.text-judul-halaman {
+  margin-left: 38%;
+  font-family: "Sarabun", sans-serif;
+  color: black;
+  padding: 0.5rem;
+  width: 25%;
+  border-radius: 10px;
   text-align: center;
-  margin-bottom: 130px;
-  color: whitesmoke;
 }
-
-.halaman .masthead-subheading {
-  font-family: "Bangers", cursive;
-  font-size: 5rem;
-  width: 100%;
-}
-.halaman .masthead-heading {
-  font-family: "Marck Script", cursive;
-  font-size: 2rem;
-  width: 100%;
-}
-/* Akhir Navbar */
-#Fitur .container {
+/* AKhir Judul Halaman  */
+/* Barang */
+#Barang .container {
   font-family: "Sarabun", sans-serif;
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
-
-/* Poupler */
-
-#Populer .container {
-  font-family: "Sarabun", sans-serif;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-.bg-light {
-  --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
-}
-.Populer-caption {
+.Barang-caption {
   text-align: center;
   background-color: #fff;
 }
-#Populer .populer-item {
+#Barang .Barang-item {
   max-width: 26rem;
   margin-left: auto;
   margin-right: auto;
 }
-#Populer .populer-item .Populer-link {
+#Barang .Barang-item .Barang-link {
   position: relative;
   display: block;
   margin: 0 auto;
 }
-#Populer .populer-item .Populer-link .Populer-hover {
+#Barang .Barang-item .Barang-link .Barang-hover {
   display: flex;
   position: absolute;
   width: 100%;
@@ -92,36 +71,78 @@
   opacity: 0;
   transition: opacity ease-in-out 0.25s;
 }
-#Populer .populer-item .Populer-link .Populer-hover .Populer-hover-content {
+#Barang .Barang-item .Barang-link .Barang-hover .Barang-hover-content {
   font-size: 1.25rem;
   color: white;
 }
-#Populer .populer-item .Populer-link:hover .Populer-hover {
+#Barang .Barang-item .Barang-link:hover .Barang-hover {
   opacity: 1;
 }
-#Populer .populer-item .Populer-caption {
+#Barang .Barang-item .Barang-caption {
   padding: 1.5rem;
   text-align: center;
   background-color: #fff;
   width: 100%;
 }
-#Populer .populer-item .Populer-caption .Populer-caption-heading {
+#Barang .Barang-item .Barang-caption .Barang-caption-heading {
   font-size: 1.5rem;
   font-family: "Sarabun", sans-serif;
   font-weight: 700;
   margin-bottom: 0;
 }
-#Populer .populer-item .Populer-caption .Populer-caption-subheading {
+#Barang .Barang-item .Barang-caption .Barang-caption-subheading {
   font-style: italic;
   font-family: "Sarabun", sans-serif;
 }
-#Populer .populer-item img {
+#Barang .Barang-item img {
   width: 100%;
   height: 250px;
 }
-#Populer .populer-item .Populer-link .Populer-hover {
+#Barang .Barang-item .Barang-link .Barang-hover {
   width: 100%;
 }
+.Barang-modal .modal-dialog {
+  margin: 1rem;
+  max-width: 100vw;
+}
+.Barang-modal .modal-content {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  text-align: center;
+}
+.Barang-modal .modal-content h2,
+.Barang-modal .modal-content .h2 {
+  font-size: 3rem;
+  line-height: 3rem;
+}
+.BarangBarang-modal .modal-content p.item-intro {
+  font-style: italic;
+  margin-bottom: 2rem;
+  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.Barang-modal .modal-content p {
+  margin-bottom: 2rem;
+}
+.Barang-modal .modal-content ul.list-inline {
+  margin-bottom: 2rem;
+}
+.Barang-modal .modal-content img {
+  margin-bottom: 2rem;
+}
+.Barang-modal .close-modal {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  background-color: transparent;
+}
+.Barang-modal .close-modal:hover {
+  opacity: 0.3;
+}
+/* AKhir Barang */
+/* Modal */
 .Populer-modal .modal-dialog {
   margin: 1rem;
   max-width: 100vw;
@@ -150,6 +171,9 @@
 .Populer-modal .modal-content img {
   margin-bottom: 2rem;
 }
+.img-fluid {
+  height: 250px !important;
+}
 .Populer-modal .close-modal {
   position: absolute;
   top: 1.5rem;
@@ -162,29 +186,4 @@
 .Populer-modal .close-modal:hover {
   opacity: 0.3;
 }
-
-/* Akhir Populer */
-/* Team */
-.team-member {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-.team-member img {
-  width: 150px;
-  height: 150px;
-  margin-bottom: 1rem;
-  border-radius: 100%;
-  border: 10px double black;
-}
-#team {
-  font-family: "Sarabun", sans-serif;
-}
-#team h4 {
-  margin-bottom: 1rem;
-}
-
-#team .container {
-  font-family: "Sarabun", sans-serif;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
+/* Akhir modal */

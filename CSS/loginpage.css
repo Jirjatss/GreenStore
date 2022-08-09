@@ -30,7 +30,7 @@
   background-color: rgba(0, 0, 0, 0.1);
   color: black;
 }
-#register {
+#login {
   margin-top: 10rem;
   margin-bottom: 5rem;
 }
@@ -43,18 +43,13 @@
 /* masthead*/
 
 .masthead {
-  padding-top: 10rem !important;
+  padding-top: 5rem !important;
   padding: 4rem;
-  background-image: url(Image/2.jpg);
+  background-image: url(../Image/Background/1.jpg);
   text-align: center;
   color: whitesmoke;
   width: 100%;
   height: 100%;
-}
-@media screen and (max-width: 991px) {
-  .masthead {
-    padding-top: 5rem !important;
-  }
 }
 
 .halaman .masthead-subheading {
@@ -83,6 +78,7 @@ form {
   align-items: center;
 }
 .form {
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
