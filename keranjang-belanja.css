@@ -40,12 +40,6 @@
   border-radius: 10px;
   text-align: center;
 }
-.table {
-  text-align: center;
-  margin-top: 0px;
-  font-family: "Sarabun", sans-serif;
-  font-weight: bold;
-}
 body {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
@@ -61,45 +55,60 @@ body {
   margin-top: 10px;
   margin-bottom: 5px;
 }
-.text-rincian {
+.text-judul-halaman {
+  margin-left: 40%;
+  font-family: "Sarabun", sans-serif;
+  color: whitesmoke;
+  padding: 0.5rem;
+  width: 25%;
+  border-radius: 10px;
+  text-align: center;
+}
+.text-dark {
   text-align: left;
-  margin-top: 0px;
+  margin-top: 50px;
   font-family: "Sarabun", sans-serif;
   font-weight: bold;
 }
-/* Rincian pembayaran */
-#rincianpembayaran {
-  margin-top: 3rem;
-  padding-left: 8rem;
-  padding-right: 8rem;
-  font-size: 0.8rem;
-}
-/* akhir rincian pembayaran */
-.col-2 {
-  font-size: 1.4rem;
-  font-family: "Sarabun", sans-serif;
-  font-weight: bold;
+
+/* konten */
+#rincian {
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   margin-bottom: 1rem;
-}
-.rincianbarang {
-  font-size: 1rem;
-  font-weight: normal;
-  color: black;
-}
-.rincianbarang img {
   border-radius: 10px;
 }
-.col-sm-2 {
-  font-size: 1rem;
-  font-family: "Sarabun", sans-serif;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-#rincian {
-  padding: 0.5rem 0rem 0rem 0rem;
-  background-color: rgb(0, 128, 0, 0.3);
-  margin-bottom: 0.2rem;
+
+.rincianbarang img {
+  width: 25%;
+  height: 70px;
+  border-radius: 10px;
 }
 .keranjangbelanja {
-  margin-top: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+}
+#rincianpembayaran {
+  margin-top: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+  font-size: 0.8rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+#rincianpembayaran .tombol {
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.keranjangbelanja .kata {
+  margin-top: 1rem;
 }
