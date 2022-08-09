@@ -23,10 +23,14 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="list-barang.html">List Barang</a>
-              </li>
               <div class="dropdown">
+                <a style="color: white" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"> List Barang </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="">Sayur</a></li>
+                  <li><a class="dropdown-item" href="">Buah</a></li>
+                </ul>
+              </div>
+          <div class="dropdown">
                 <a style="color: white" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"> Profil </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                   <li><a class="dropdown-item" href="keranjang-belanja.html">Keranjang</a></li>
@@ -56,6 +60,9 @@
           Produk
         </div>
         <div class="col-2 col-sm-2" style="text-align: center;">
+          Nama
+        </div>
+        <div class="col-2 col-sm-2" style="text-align: center;">
           Jenis
         </div>
         <div class="col-2 col-sm-2" style="text-align: center;">
@@ -71,13 +78,16 @@
           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
           <label class="form-check-label" for="flexCheckDefault"></label>
         </div>
-        <div class="col-2 rincianbarang" style="text-align: center;">
+        <div class="col-2 rincianbarang gambar" style="text-align: center;">
           <img src="Image/Sayur/bayam.jpg" alt="" style="width:50%">
         </div>
-        <div class="col-2 rincianbarang kata" style="text-align: center;">
-          Sayur Bayam
+        <div class="col-2 rincianbarang kata nama" style="text-align: center;">
+          Bayam
         </div>
-        <div class="col-2 rincianbarang kata" style="text-align: center;">
+        <div class="col-2 rincianbarang kata jenis" style="text-align: center;">
+          Sayur
+        </div>
+        <div class="col-2 rincianbarang kuantitas" style="text-align: center;">
           <button type="button" class="btn btn-primary btn-md"><i class="fas fa-minus"></i></button>
           <span class="mx-2">1</span>
           <button type="button" class="btn btn-primary btn-md"><i class="fas fa-plus text-white"></i></buttontype>
@@ -94,13 +104,16 @@
           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
           <label class="form-check-label" for="flexCheckDefault"></label>
         </div>
-        <div class="col-2 rincianbarang" style="text-align: center;">
+        <div class="col-2 rincianbarang gambar" style="text-align: center;">
           <img src="Image/Sayur/tomat.jpg" alt="" style="width:50%">
         </div>
-        <div class="col-2 rincianbarang kata" style="text-align: center;">
-          Sayur Tomat
+        <div class="col-2 rincianbarang kata nama" style="text-align: center;">
+          Tomat
         </div>
-        <div class="col-2 rincianbarang kata" style="text-align: center;">
+        <div class="col-2 rincianbarang kata jenis" style="text-align: center;">
+          Sayur
+        </div>
+        <div class="col-2 rincianbarang kuantitas" style="text-align: center;">
           <button type="button" class="btn btn-primary btn-md"><i class="fas fa-minus"></i></button>
           <span class="mx-2">1</span>
           <button type="button" class="btn btn-primary btn-md"><i class="fas fa-plus text-white"></i></buttontype>
@@ -117,18 +130,21 @@
           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
           <label class="form-check-label" for="flexCheckDefault"></label>
         </div>
-        <div class="col-2 rincianbarang" style="text-align: center;">
+        <div class="col-2 rincianbarang gambar" style="text-align: center;">
           <img src="Image/Buah/jeruk.jpg" alt="" style="width:50%">
         </div>
-        <div class="col-2 rincianbarang kata kata" style="text-align: center;">
-          Buah Jeruk
+        <div class="col-2 rincianbarang kata nama" style="text-align: center;">
+          Jeruk
         </div>
-        <div class="col-2 rincianbarang kata kata" style="text-align: center;">
+        <div class="col-2 rincianbarang kata jenis" style="text-align: center;">
+          Buah
+        </div>
+        <div class="col-2 rincianbarang kuantitas" style="text-align: center;">
           <button type="button" class="btn btn-primary btn-md"><i class="fas fa-minus"></i></button>
           <span class="mx-2">1</span>
           <button type="button" class="btn btn-primary btn-md"><i class="fas fa-plus text-white"></i></buttontype>
         </div>
-        <div class="col-2 rincianbarang kata kata" style="text-align: center;">
+        <div class="col-2 rincianbarang kata" style="text-align: center;">
           <span class="material-icons">
             delete
             </span>
@@ -140,13 +156,16 @@
           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
           <label class="form-check-label" for="flexCheckDefault"></label>
         </div>
-        <div class="col-2 rincianbarang" style="text-align: center;">
+        <div class="col-2 rincianbarang gambar" style="text-align: center;">
           <img src="Image/Buah/duren.jpg" alt="" style="width:50%">
         </div>
-        <div class="col-2 rincianbarang  kata kata" style="text-align: center;"> 
+        <div class="col-2 rincianbarang kata nama" style="text-align: center;"> 
           Duren
         </div>
-        <div class="col-2 rincianbarang kata" style="text-align: center;">
+        <div class="col-2 rincianbarang kata jenis" style="text-align: center;">
+            Buah
+        </div>
+        <div class="col-2 rincianbarang kuantitas" style="text-align: center;">
           <button type="button" class="btn btn-primary btn-md"><i class="fas fa-minus"></i></button>
           <span class="mx-2">1</span>
           <button type="button" class="btn btn-primary btn-md"><i class="fas fa-plus text-white"></i></buttontype>
