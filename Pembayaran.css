@@ -3,7 +3,6 @@
   padding: 0;
 }
 #jumbotron {
-  background-image: url(Image/harvest-still-life-vegetables-fresh-wallpaper-preview.jpg);
   width: 100%;
   padding-top: 6rem;
   padding-bottom: 0.5rem;
@@ -11,7 +10,7 @@
 .navbar {
   margin-top: 1rem;
   margin-left: 5%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgb(0, 0, 0, 0.7);
   border-radius: 10px;
   padding: 1rem;
   width: 90%;
@@ -33,9 +32,9 @@
 }
 /* Keranjang Saya */
 .text-judul-halaman {
-  margin-left: 40%;
+  margin-left: 38%;
   font-family: "Sarabun", sans-serif;
-  color: whitesmoke;
+  color: black;
   padding: 0.5rem;
   width: 25%;
   border-radius: 10px;

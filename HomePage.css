@@ -12,7 +12,7 @@
   margin-top: 1rem;
   margin-left: 5%;
   margin-bottom: 100px;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgb(0, 0, 0, 0.7);
   border-radius: 10px;
   padding: 1rem;
   width: 90%;
@@ -49,12 +49,13 @@
   font-size: 2rem;
   width: 100%;
 }
+/* Akhir Navbar */
 #Fitur .container {
   font-family: "Sarabun", sans-serif;
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
-/* Akhir Navbar */
+
 /* Poupler */
 
 #Populer .container {

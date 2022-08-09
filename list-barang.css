@@ -3,14 +3,13 @@
   padding: 0;
 }
 #list-barang {
-  background-image: url(Image/harvest-still-life-vegetables-fresh-wallpaper-preview.jpg);
   padding-top: 6rem;
   padding-bottom: 0.5rem;
 }
 .navbar {
   margin-top: 1rem;
   margin-left: 5%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgb(0, 0, 0, 0.7);
   border-radius: 10px;
   padding: 1rem;
   width: 90%;
@@ -34,7 +33,7 @@
 .text-judul-halaman {
   margin-left: 38%;
   font-family: "Sarabun", sans-serif;
-  color: whitesmoke;
+  color: black;
   padding: 0.5rem;
   width: 25%;
   border-radius: 10px;
@@ -46,10 +45,6 @@
   font-family: "Sarabun", sans-serif;
   padding-top: 3rem;
   padding-bottom: 3rem;
-}
-.bg-light {
-  --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
 }
 .Barang-caption {
   text-align: center;
