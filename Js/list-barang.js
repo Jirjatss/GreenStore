@@ -2,10 +2,31 @@ let containerSayur = document.getElementById("container-sayur");
 let ModalcontainerSayur = document.getElementById("list-sayur");
 let containerBuah = document.getElementById("container-buah");
 let ModalcontainerBuah = document.getElementById("list-buah");
+let cartSayur = [];
+let cartBuah = [];
+
+let addToCart = (id) => {
+  let objectSayurLocalStorage = JSON.parse(localStorage.getItem("sayur")); // ngambil dari local storage dengan key sayur
+  let foundSayur = objectSayurLocalStorage.find((sayur) => {
+    return sayur.id === Number(id);
+  });
+  cartSayur.push(foundSayur);
+  localStorage.setItem("cart-sayur", JSON.stringify(cartSayur));
+
+  let objectBuahLocalStorage = JSON.parse(localStorage.getItem("buah")); // ngambil dari local storage dengan key buah
+  let foundBuah = objectBuahLocalStorage.find((buah) => {
+    return buah.id === Number(id);
+  });
+  cartBuah.push(foundBuah);
+  localStorage.setItem("cart-buah", JSON.stringify(cartBuah));
+};
 
 fetch("https://west-broad-gerbil.glitch.me/sayur")
   .then((response) => response.json())
   .then((data) => {
+    // menyimpan data ke local storage
+    localStorage.setItem("sayur", JSON.stringify(data));
+
     data.forEach((sayur) => {
       containerSayur.innerHTML += `
     <div class="col-lg-4 col-sm-6 mb-4">
@@ -34,7 +55,7 @@ fetch("https://west-broad-gerbil.glitch.me/sayur")
                 <div class="col-lg-8">
                   <div class="modal-body">
                     <!-- Product details-->
-                    <h2 class="text-uppercase">${sayur.name}</h2>
+                    <h2 class="text-uppercase nama-sayur">${sayur.name}</h2>
                     <p class="item-intro text-muted"></p>
                     <img class="img-fluid d-block mx-auto" src=${sayur.photo} alt=${sayur.name} />
                     <p></p>
@@ -53,7 +74,7 @@ fetch("https://west-broad-gerbil.glitch.me/sayur")
                       </li>
                     </ul>
 
-                    <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                    <button class="btn btn-success btn-xl text-uppercase buttonSayur" id=${sayur.id} type="button">
                       <span class="material-icons"> add_shopping_cart </span> <br />
                       Masukan ke Keranjang</button
                     ><br /><br />
@@ -70,11 +91,24 @@ fetch("https://west-broad-gerbil.glitch.me/sayur")
       </div>
     `;
     });
+    let cartSayurButtons = document.querySelectorAll(".buttonSayur");
+    cartSayurButtons.forEach((button) => {
+      button.addEventListener("click", (e) => addToCart(button.id));
+    });
   });
 
+// AKhir SAyur
+
+// Buah //
+// let addToCartBuah = (id) => {
+//
+// };
 fetch("https://west-broad-gerbil.glitch.me/buah")
   .then((response) => response.json())
   .then((data) => {
+    // menyimpan data ke local storage
+    localStorage.setItem("buah", JSON.stringify(data));
+
     data.forEach((buah) => {
       containerBuah.innerHTML += `
     <div class="col-lg-4 col-sm-6 mb-4">
@@ -103,7 +137,7 @@ fetch("https://west-broad-gerbil.glitch.me/buah")
                 <div class="col-lg-8">
                   <div class="modal-body">
                     <!-- Product details-->
-                    <h2 class="text-uppercase">${buah.name}</h2>
+                    <h2 class="text-uppercase nama-buah">${buah.name}</h2>
                     <p class="item-intro text-muted"></p>
                     <img class="img-fluid d-block mx-auto" src=${buah.photo} alt=${buah.name} />
                     <p></p>
@@ -122,7 +156,7 @@ fetch("https://west-broad-gerbil.glitch.me/buah")
                       </li>
                     </ul>
 
-                    <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                    <button class="btn btn-success btn-xl text-uppercase buttonBuah" id=${buah.id} type="button">
                       <span class="material-icons"> add_shopping_cart </span> <br />
                       Masukan ke Keranjang</button
                     ><br /><br />
@@ -138,5 +172,9 @@ fetch("https://west-broad-gerbil.glitch.me/buah")
         </div>
       </div>
       `;
+    });
+    let cartBuahButtons = document.querySelectorAll(".buttonBuah");
+    cartBuahButtons.forEach((button) => {
+      button.addEventListener("click", (e) => addToCart(button.id));
     });
   });

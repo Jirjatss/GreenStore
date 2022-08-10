@@ -3,15 +3,10 @@
   padding: 0;
 }
 /* Navbar */
-@media screen and (min-width: 1080px) {
-  #jumbotron {
-    background-image: url(../Image/Background/bg-2.jpg);
-    padding-top: 15rem;
-    padding-bottom: 5rem;
-  }
-}
+
 #jumbotron {
   background-image: url(../Image/Background/harvest-still-life-vegetables-fresh-wallpaper-preview.jpg);
+  background-size: 100%;
   padding-top: 15rem;
   padding-bottom: 5rem;
 }

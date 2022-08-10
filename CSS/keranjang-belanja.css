@@ -175,3 +175,8 @@ body {
 #bottom {
   margin-top: 90%;
 }
+
+button {
+  background-color: transparent;
+  border: none;
+}
