@@ -1,9 +1,9 @@
-let form = document.getElementById("form").value;
+let form = document.getElementById("form");
 let submit = document.getElementById("submit");
 let hasil = document.getElementById("hasil");
-
-submit.addEventListener("click", function (event) {
-  event.preventDefault();
+let hasilregister = [];
+submit.addEventListener("click", (e) => {
+  e.preventDefault();
 
   const nama = document.getElementById("nama");
   const email = document.getElementById("email").value;
@@ -39,8 +39,8 @@ submit.addEventListener("click", function (event) {
     hasil.style.color = "red";
     hasil.innerHTML = "Enter valid data";
   }
-  simpanData();
-  // hapus();
+  // simpanData();
+  hapus();
 });
 
 function simpanData() {
@@ -51,9 +51,10 @@ function simpanData() {
     mail: email.value,
     Password: password.value,
   };
-  let Daftar = JSON.stringify(HasilDaftar);
-  localStorage.setItem("regsiter", Daftar);
+  hasilregister.push(HasilDaftar);
+  let Daftar = JSON.stringify(hasilregister);
+  localStorage.setItem("register", Daftar);
 }
-// function hapus() {
-//   form.reset();
-// }
+function hapus() {
+  form.reset();
+}

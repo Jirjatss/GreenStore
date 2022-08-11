@@ -22,6 +22,9 @@
 .navbar a:hover {
   color: yellowgreen;
 }
+.navbar-toggler:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
 .dropdown a {
   color: black;
 }
@@ -165,18 +168,16 @@ body {
   border: none;
 }
 #numberPlace {
-  margin-left: 5px;
-  margin-right: 5px;
-}
-#submit {
-  border: none;
-  height: 25px;
-}
-#bottom {
-  margin-top: 90%;
+  padding-left: 0.8rem;
+  text-align: center;
+  width: 20% !important;
 }
 
 button {
   background-color: transparent;
   border: none;
+}
+button:hover {
+  background-color: red;
+  color: white;
 }

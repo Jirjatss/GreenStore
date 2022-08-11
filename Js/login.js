@@ -1,7 +1,7 @@
 let form = document.getElementById("form").value;
 let submit = document.getElementById("submit");
 let hasil = document.getElementById("hasil");
-
+let hasilLogin = [];
 submit.addEventListener("click", function (event) {
   event.preventDefault();
 
@@ -26,20 +26,20 @@ submit.addEventListener("click", function (event) {
     hasil.style.color = "red";
     hasil.innerHTML = "Enter valid data";
   }
-  simpanData();
-  // hapus();
+
+  hapus();
 });
 
 function simpanData() {
-  // HasilLogin.push(form);
   let HasilLogin = {
     Key: "0",
     mail: email.value,
     Password: password.value,
   };
-  let Login = JSON.stringify(HasilLogin);
+  hasilLogin.push(HasilLogin);
+  let Login = JSON.stringify(hasilLogin);
   localStorage.setItem("login", Login);
 }
-// function hapus() {
-//   form.reset();
-// }
+function hapus() {
+  form.reset();
+}
