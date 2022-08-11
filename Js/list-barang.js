@@ -5,14 +5,15 @@ let ModalcontainerBuah = document.getElementById("list-buah");
 let cartSayur = [];
 let cartBuah = [];
 
-let addToCart = (id) => {
+let addToCartSayur = (id) => {
   let objectSayurLocalStorage = JSON.parse(localStorage.getItem("sayur")); // ngambil dari local storage dengan key sayur
   let foundSayur = objectSayurLocalStorage.find((sayur) => {
     return sayur.id === Number(id);
   });
   cartSayur.push(foundSayur);
   localStorage.setItem("cart-sayur", JSON.stringify(cartSayur));
-
+};
+let addToCartBuah = (id) => {
   let objectBuahLocalStorage = JSON.parse(localStorage.getItem("buah")); // ngambil dari local storage dengan key buah
   let foundBuah = objectBuahLocalStorage.find((buah) => {
     return buah.id === Number(id);
@@ -93,7 +94,7 @@ fetch("https://west-broad-gerbil.glitch.me/sayur")
     });
     let cartSayurButtons = document.querySelectorAll(".buttonSayur");
     cartSayurButtons.forEach((button) => {
-      button.addEventListener("click", (e) => addToCart(button.id));
+      button.addEventListener("click", (e) => addToCartSayur(button.id));
     });
   });
 
@@ -175,6 +176,6 @@ fetch("https://west-broad-gerbil.glitch.me/buah")
     });
     let cartBuahButtons = document.querySelectorAll(".buttonBuah");
     cartBuahButtons.forEach((button) => {
-      button.addEventListener("click", (e) => addToCart(button.id));
+      button.addEventListener("click", (e) => addToCartBuah(button.id));
     });
   });

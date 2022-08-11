@@ -5,8 +5,10 @@ let hasil = document.getElementById("hasil");
 submit.addEventListener("click", function (event) {
   event.preventDefault();
 
+  const nama = document.getElementById("nama");
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
+  const konfirpassword = document.getElementById("konfirpassword");
 
   if (email === "") {
     email_status = false;
@@ -20,7 +22,18 @@ submit.addEventListener("click", function (event) {
     password_status = true;
   }
 
-  if (email_status && password_status) {
+  if (nama === "") {
+    nama_status = false;
+  } else {
+    nama_status = true;
+  }
+
+  if (konfirpassword !== password) {
+    konfirpassword_status = false;
+  } else {
+    konfirpassword_status = true;
+  }
+  if (email_status && password_status && nama && konfirpassword) {
     simpanData();
   } else {
     hasil.style.color = "red";
@@ -32,13 +45,14 @@ submit.addEventListener("click", function (event) {
 
 function simpanData() {
   // HasilLogin.push(form);
-  let HasilLogin = {
+  let HasilDaftar = {
     Key: "0",
+    nama: nama.value,
     mail: email.value,
     Password: password.value,
   };
-  let Login = JSON.stringify(HasilLogin);
-  localStorage.setItem("login", Login);
+  let Daftar = JSON.stringify(HasilDaftar);
+  localStorage.setItem("regsiter", Daftar);
 }
 // function hapus() {
 //   form.reset();
