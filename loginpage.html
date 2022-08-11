@@ -58,11 +58,11 @@
             <form id="form">
               <fieldset>
                 <legend><b>Masuk</b></legend>
-                <div class="field">
+                <div class="field login">
                   <label>Masukkan Email</label><br /><br>
                   <input id="email" type="email" name="email" /><br />
                 </div>
-                <div class="field">
+                <div class="field login">
                   <label>Masukkan Password</label><br /><br>
                   <input id="password" type="password" name="password" /><br />
                 </div>
@@ -71,13 +71,15 @@
                 </div>
                 <p style="font-size: 250">Belum punya akun? <a href="registerPage.html" style="text-decoration: none; color: green; font-size: 250">Daftar Sekarang!</a></p>
                 <input id="submit" type="submit" class="button" value="Masuk" />
-                <div id="hasil" class="hasil"></div>
+                <p id="hasil" class="hasil"></p>
               </fieldset>
             </form>
         </div>
       </div>
-    </section>
 
+      <!-- Popup -->
+    </section>
+    <script src="Js/login.js"></script>
     <script src="vendor/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
   </body>
 </html>
