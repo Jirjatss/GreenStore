@@ -4,22 +4,37 @@ let containerBuah = document.getElementById("container-buah");
 let ModalcontainerBuah = document.getElementById("list-buah");
 let cartSayur = [];
 let cartBuah = [];
+const isiLSCartSayur = localStorage.getItem("cartsayur");
+const isiLSCartBuah = localStorage.getItem("cartbuah");
 
 let addToCartSayur = (id) => {
   let objectSayurLocalStorage = JSON.parse(localStorage.getItem("sayur")); // ngambil dari local storage dengan key sayur
   let foundSayur = objectSayurLocalStorage.find((sayur) => {
     return sayur.id === Number(id);
   });
-  cartSayur.push(foundSayur);
-  localStorage.setItem("cartsayur", JSON.stringify(cartSayur));
+
+  if (isiLSCartSayur === null) {
+    cartSayur.push(foundSayur);
+    localStorage.setItem("cartsayur", JSON.stringify(cartSayur));
+  } else {
+    cartSayur = JSON.parse(isiLSCartSayur);
+    cartSayur.push(foundSayur);
+    localStorage.setItem("cartsayur", JSON.stringify(cartSayur));
+  }
 };
 let addToCartBuah = (id) => {
   let objectBuahLocalStorage = JSON.parse(localStorage.getItem("buah")); // ngambil dari local storage dengan key buah
   let foundBuah = objectBuahLocalStorage.find((buah) => {
     return buah.id === Number(id);
   });
-  cartBuah.push(foundBuah);
-  localStorage.setItem("cartbuah", JSON.stringify(cartBuah));
+  if (isiLSCartBuah === null) {
+    cartBuah.push(foundBuah);
+    localStorage.setItem("cartbuah", JSON.stringify(cartBuah));
+  } else {
+    cartBuah = JSON.parse(isiLSCartBuah);
+    cartBuah.push(foundBuah);
+    localStorage.setItem("cartbuah", JSON.stringify(cartBuah));
+  }
 };
 
 fetch("https://west-broad-gerbil.glitch.me/sayur")
