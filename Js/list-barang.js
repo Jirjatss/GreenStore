@@ -11,7 +11,7 @@ let addToCartSayur = (id) => {
     return sayur.id === Number(id);
   });
   cartSayur.push(foundSayur);
-  localStorage.setItem("cart-sayur", JSON.stringify(cartSayur));
+  localStorage.setItem("cartsayur", JSON.stringify(cartSayur));
 };
 let addToCartBuah = (id) => {
   let objectBuahLocalStorage = JSON.parse(localStorage.getItem("buah")); // ngambil dari local storage dengan key buah
@@ -19,7 +19,7 @@ let addToCartBuah = (id) => {
     return buah.id === Number(id);
   });
   cartBuah.push(foundBuah);
-  localStorage.setItem("cart-buah", JSON.stringify(cartBuah));
+  localStorage.setItem("cartbuah", JSON.stringify(cartBuah));
 };
 
 fetch("https://west-broad-gerbil.glitch.me/sayur")

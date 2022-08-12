@@ -22,6 +22,9 @@
 .navbar a:hover {
   color: yellowgreen;
 }
+.navbar-toggler:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
 .dropdown a {
   color: black;
 }
@@ -150,33 +153,36 @@ body {
 }
 /* Kuantitas */
 #minus,
-#plus {
+#plus,
+#tambah,
+#kurang {
   height: 25px;
   width: 25px;
   border: 1px black solid;
   border-radius: 50%;
 }
-#minus:hover {
+#minus:hover,
+#kurang:hover {
   background-color: red;
   border: none;
 }
-#plus:hover {
+#plus:hover,
+#tambah:hover {
   background-color: green;
   border: none;
 }
-#numberPlace {
-  margin-left: 5px;
-  margin-right: 5px;
-}
-#submit {
-  border: none;
-  height: 25px;
-}
-#bottom {
-  margin-top: 90%;
+#numberPlace,
+#numberBuah {
+  padding-left: 0.8rem;
+  text-align: center;
+  width: 20% !important;
 }
 
 button {
   background-color: transparent;
   border: none;
+}
+button:hover {
+  background-color: red;
+  color: white;
 }

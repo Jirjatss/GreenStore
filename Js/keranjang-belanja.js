@@ -1,51 +1,6 @@
-window.onload = function () {
-  var minusBtn = document.getElementById("minus"),
-    plusBtn = document.getElementById("plus"),
-    numberPlace = document.getElementById("numberPlace"),
-    submitBtn = document.getElementById("submit"),
-    number = 0, /// number value
-    min = 0, /// min number
-    max = 30; /// max nilai
-
-  minusBtn.onclick = function () {
-    if (number > min) {
-      number = number - 1; /// Minus 1 of the number
-      numberPlace.innerText = number; /// Display the value in place of the number
-    }
-    if (number == min) {
-      numberPlace.style.color = "red";
-      setTimeout(function () {
-        numberPlace.style.color = "black";
-      }, 500);
-    } else {
-      numberPlace.style.color = "black";
-    }
-  };
-  plusBtn.onclick = function () {
-    if (number < max) {
-      number = number + 1;
-      numberPlace.innerText = number; /// Display the value in place of the number
-    }
-    if (number == max) {
-      numberPlace.style.color = "red";
-      setTimeout(function () {
-        numberPlace.style.color = "black";
-      }, 500);
-    } else {
-      numberPlace.style.color = "black";
-    }
-  };
-  submitBtn.onclick = function () {
-    alert("you choice : " + number);
-  };
-};
-
 let keranjangBelanjaSayur = document.getElementById("keranjang-belanjaSayur");
-
-let sayur = JSON.parse(localStorage.getItem("cart-sayur"));
-
+let sayur = JSON.parse(localStorage.getItem("cartsayur"));
 sayur.forEach((sayur) => {
-  // console.log(sayur);
   keranjangBelanjaSayur.innerHTML += `
     <div class="row d-flex justify-content-between keranjangbelanja">
     <div class="col-2 rincianbarang kata form-check d-flex justify-content-center" id=${sayur.id}>
@@ -56,20 +11,26 @@ sayur.forEach((sayur) => {
     <img src=${sayur.photo} alt="" style="width:50%">
   </div>
   <div class="col-2 rincianbarang kata nama" style="text-align: center;">
-  ${sayur.name}
+    ${sayur.name}   
   </div>
-  <div class="col-2 rincianbarang kata jenis" style="text-align: center;">
-  ${sayur.harga}
+  <div class="col-2 rincianbarang kata jenis" style="text-align: center;" id="value">
+   Rp. ${sayur.harga} (1)
   </div>
   <div class="col-2 rincianbarang kuantitas" style="text-align: center;">
-    <div id="mainDiv">
-      <button id="minus">-</button>
-      <span id="numberPlace">1</span>
-      <button id="plus">+</button>
-  </div>
-  </div>
+  <button class="btn btn-link px-2" id="minus"
+  onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+  <i class="bi bi-dash"></i>
+  </button>
+
+  <input id="numberPlace" min="1" name="quantity" value="1" type="number" />
+
+  <button class="btn btn-link px-2" id="plus" value="1"
+  onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+  <i class="bi bi-plus"></i>
+  </button>
+</div>
   <div class="col-2 rincianbarang kata" style="text-align: center;">
-  <button id="hapusitem" ><span class="material-icons">
+  <button class="hapusitem" ><span class="material-icons">
   delete
   </span>
   </button>
@@ -77,11 +38,33 @@ sayur.forEach((sayur) => {
     </div>
 
     `;
+  // Fungsi tambah kuantitas Sayur
+  let plusbutton = document.getElementById("plus");
+  let minusbutton = document.getElementById("minus");
+
+  let quantity = parseInt(document.getElementById("numberPlace").value);
+  quantity++;
+
+  plusbutton.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    let harga = document.getElementById("value");
+
+    let set = quantity++ * sayur.harga;
+    harga.innerHTML = `Rp. ${set} (${quantity - 1})`;
+  });
+  // Fungsi kurang kuantitas Sayur
+  minusbutton.addEventListener("click", function (event) {
+    event.preventDefault();
+    quantity--;
+    let harga = document.getElementById("value");
+    let set = sayur.harga * (quantity - 1);
+    harga.innerHTML = `Rp. ${set} (${quantity - 1})`;
+  });
 });
 
 let keranjangBelanjaBuah = document.getElementById("keranjang-belanjaBuah");
-
-let buah = JSON.parse(localStorage.getItem("cart-buah"));
+let buah = JSON.parse(localStorage.getItem("cartbuah"));
 
 buah.forEach((buah) => {
   // console.log(buah);
@@ -97,18 +80,24 @@ buah.forEach((buah) => {
   <div class="col-2 rincianbarang kata nama" style="text-align: center;">
   ${buah.name}
   </div>
-  <div class="col-2 rincianbarang kata jenis" style="text-align: center;">
-  ${buah.harga}
+  <div class="col-2 rincianbarang kata jenis" style="text-align: center;" id="nilai">
+  Rp. ${buah.harga} (1)
   </div>
   <div class="col-2 rincianbarang kuantitas" style="text-align: center;">
-    <div id="mainDiv">
-      <button id="minus">-</button>
-      <span id="numberPlace">1</span>
-      <button id="plus">+</button>
-  </div>
+  <button class="btn btn-link px-2" id="kurang"
+  onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+  <i class="bi bi-dash"></i>
+  </button>
+
+  <input id="numberBuah" min="1" name="quantity" value="1" type="number" />
+
+  <button class="btn btn-link px-2" id="tambah"
+  onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+  <i class="bi bi-plus"></i>
+  </button>
   </div>
   <div class="col-2 rincianbarang kata" style="text-align: center;">
-    <button id="hapusitem" ><span class="material-icons">
+    <button class="hapusitem" ><span class="material-icons">
       delete
       </span>
       </button>
@@ -116,13 +105,42 @@ buah.forEach((buah) => {
     </div>
 
     `;
+  // Fungsi tambah kuantitas Buah
+  let plusbutton1 = document.getElementById("tambah");
+  let minusbutton1 = document.getElementById("kurang");
+
+  let quantity1 = parseInt(document.getElementById("numberBuah").value);
+  quantity1++;
+
+  plusbutton1.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    let harga1 = document.getElementById("nilai");
+
+    let set = quantity1++ * buah.harga;
+    harga1.innerHTML = `Rp. ${set} (${quantity1 - 1})`;
+  });
+  // Fungsi kurang kuantitas buah
+  minusbutton1.addEventListener("click", function (event) {
+    event.preventDefault();
+    quantity1--;
+    let harga1 = document.getElementById("nilai");
+    let set = buah.harga * (quantity1 - 1);
+    harga1.innerHTML = `Rp. ${set} (${quantity1 - 1})`;
+  });
 });
-// Hapus Item //
 
-// let array = new buah();
-// let foundSayur = objectSayurLocalStorage.find((sayur) => {
-//   return sayur.id === Number(id);
-// });
-// let index = array.indexOf(foundSayur);
+// const items = JSON.parse(localStorage.getItem("cartsayur"));
+// // let hapusSayur = items.find((cartsayur) => {
+// //   return cartsayur.id === Number(id);
+// // });
 
-// console.log(index);
+// // let hapusSayur = items.find((cartsayur) => {
+// //   return cartsayur.id === Number(id);
+// // });
+
+// const filtered = items.filter((item) => item.id !== 1);
+// localStorage.setItem("cartsayur", JSON.stringify(filtered));
+// reload();
+// let harga = document.getElementById("value");
+// console.log(harga);
