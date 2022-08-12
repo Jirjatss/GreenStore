@@ -14,7 +14,7 @@ sayur.forEach((sayur) => {
     ${sayur.name}   
   </div>
   <div class="col-2 rincianbarang kata jenis" style="text-align: center;" id="value">
-   ${sayur.harga} (1)
+   Rp. ${sayur.harga} (1)
   </div>
   <div class="col-2 rincianbarang kuantitas" style="text-align: center;">
   <button class="btn btn-link px-2" id="minus"
@@ -51,7 +51,7 @@ sayur.forEach((sayur) => {
     let harga = document.getElementById("value");
 
     let set = quantity++ * sayur.harga;
-    harga.innerHTML = `${set} (${quantity - 1})`;
+    harga.innerHTML = `Rp. ${set} (${quantity - 1})`;
   });
   // Fungsi kurang kuantitas Sayur
   minusbutton.addEventListener("click", function (event) {
@@ -59,7 +59,7 @@ sayur.forEach((sayur) => {
     quantity--;
     let harga = document.getElementById("value");
     let set = sayur.harga * (quantity - 1);
-    harga.innerHTML = `${set} (${quantity - 1})`;
+    harga.innerHTML = `Rp. ${set} (${quantity - 1})`;
   });
 });
 
@@ -81,7 +81,7 @@ buah.forEach((buah) => {
   ${buah.name}
   </div>
   <div class="col-2 rincianbarang kata jenis" style="text-align: center;" id="nilai">
-  ${buah.harga} (1)
+  Rp. ${buah.harga} (1)
   </div>
   <div class="col-2 rincianbarang kuantitas" style="text-align: center;">
   <button class="btn btn-link px-2" id="kurang"
@@ -118,7 +118,7 @@ buah.forEach((buah) => {
     let harga1 = document.getElementById("nilai");
 
     let set = quantity1++ * buah.harga;
-    harga1.innerHTML = `${set} (${quantity1 - 1})`;
+    harga1.innerHTML = `Rp. ${set} (${quantity1 - 1})`;
   });
   // Fungsi kurang kuantitas buah
   minusbutton1.addEventListener("click", function (event) {
@@ -126,7 +126,7 @@ buah.forEach((buah) => {
     quantity1--;
     let harga1 = document.getElementById("nilai");
     let set = buah.harga * (quantity1 - 1);
-    harga1.innerHTML = `${set} (${quantity1 - 1})`;
+    harga1.innerHTML = `Rp. ${set} (${quantity1 - 1})`;
   });
 });
 
