@@ -40,8 +40,8 @@ sayur.forEach((sayur) => {
 
     `;
 
-  let plusbutton = document.getElementById(`plus-${sayur.id}`);
-  let minusbutton = document.getElementById(`minus-${sayur.id}`);
+  let plusbutton = document.querySelector(`#plus-${sayur.id}`);
+  let minusbutton = document.querySelector(`#minus-${sayur.id}`);
 
   let quantity = parseInt(document.getElementById("numberPlace").value);
   quantity++;
@@ -49,7 +49,7 @@ sayur.forEach((sayur) => {
   plusbutton.addEventListener("click", (e) => {
     e.preventDefault();
 
-    let harga = document.getElementById(`value-${sayur.id}`);
+    let harga = document.querySelector(`#value-${sayur.id}`);
     let nilai = parseInt(`${sayur.harga}`);
     // console.log(nilai);
 
@@ -68,16 +68,21 @@ sayur.forEach((sayur) => {
 
   //hapus element
   let hapusButton = document.querySelector(`#hapusitem-${sayur.id}`);
-  hapusButton.addEventListener("click", (e) => {
-    e.preventDefault();
+  let hapusSayur = document.querySelector(`#keranjang-${sayur.id}`);
 
-    let hapusSayur = document.querySelector(`#keranjang-${sayur.id}`);
-
+  hapusButton.onclick = function () {
+    alert("Data sudah dihapus");
     hapusSayur.remove();
-    // const filtered = items.filter((item) => item.id !== sayur.id);
-    // localStorage.setItem("cartsayur", JSON.stringify(filtered));
-    // reload();
-  });
+    const items = JSON.parse(localStorage.getItem("cartsayur"));
+    const filtered = items.filter((item) => item.id !== sayur.id);
+    localStorage.setItem("cartsayur", JSON.stringify(filtered));
+    refresh();
+  };
+
+  function refresh() {
+    window.location.reload();
+  }
+  // });
 });
 
 let keranjangBelanjaBuah = document.getElementById("keranjang-belanjaBuah");

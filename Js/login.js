@@ -26,7 +26,7 @@ submit.addEventListener("click", function (event) {
     simpanData();
     hasil.style.color = "green";
     hasil.innerHTML = "Anda Berhasil Login";
-    hapusRegister.remove();
+    hapusRegister.classList.add("hide");
     submit.innerHTML = `<button id="submit" type="submit" class="button"  onclick="location.href='index.html'">Lanjutkan Ke Home</button>`;
   } else {
     hasil.style.color = "red";
