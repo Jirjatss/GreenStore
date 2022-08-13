@@ -2,6 +2,8 @@ let form = document.getElementById("form").value;
 let submit = document.getElementById("submit");
 let hasil = document.getElementById("hasil");
 let hasilLogin = [];
+let hapusRegister = document.getElementById("register");
+
 submit.addEventListener("click", function (event) {
   event.preventDefault();
 
@@ -22,6 +24,10 @@ submit.addEventListener("click", function (event) {
 
   if (email_status && password_status) {
     simpanData();
+    hasil.style.color = "green";
+    hasil.innerHTML = "Anda Berhasil Login";
+    hapusRegister.remove();
+    submit.innerHTML = `<button id="submit" type="submit" class="button"  onclick="location.href='index.html'">Lanjutkan Ke Home</button>`;
   } else {
     hasil.style.color = "red";
     hasil.innerHTML = "Enter valid data";

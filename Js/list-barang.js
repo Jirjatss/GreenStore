@@ -90,14 +90,10 @@ fetch("https://west-broad-gerbil.glitch.me/sayur")
                       </li>
                     </ul>
 
-                    <button class="btn btn-success btn-xl text-uppercase buttonSayur" id=${sayur.id} type="button">
-                      <span class="material-icons"> add_shopping_cart </span> <br />
-                      Masukan ke Keranjang</button
-                    ><br /><br />
-                    <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                      <span class="material-icons"> local_atm </span> <br />
-                      Beli Sekarang
-                    </button>
+                    <button class="btn btn-success btn-xl text-uppercase buttonSayur" id=${sayur.id}  type="button"><a class="btn btn-success btn-xl text-uppercase" tombol" data-bs-toggle="modal" href="#modalsayur"><i class="fa fa-fw fa-shopping-cart"></i><br>Keranjang</a>
+                     </button>
+                     <button class="btn btn-success btn-xl text-uppercase buttonSayur"  type="button"><a class="btn btn-success btn-xl text-uppercase" tombol"  onclick="location.href='Pembayaran.html'"><i class="fa fa-fw  fa-credit-card"></i><br>Beli Ajalah</a>
+                     </button>
                   </div>
                 </div>
               </div>
@@ -172,14 +168,10 @@ fetch("https://west-broad-gerbil.glitch.me/buah")
                       </li>
                     </ul>
 
-                    <button class="btn btn-success btn-xl text-uppercase buttonBuah" id=${buah.id} type="button">
-                      <span class="material-icons"> add_shopping_cart </span> <br />
-                      Masukan ke Keranjang</button
-                    ><br /><br />
-                    <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                      <span class="material-icons"> local_atm </span> <br />
-                      Beli Sekarang
-                    </button>
+                    <button class="btn btn-success btn-xl text-uppercase buttonBuah" id=${buah.id}  type="button"><a class="btn btn-success btn-xl text-uppercase" tombol" data-bs-toggle="modal" href="#modalsayur"><i class="fa fa-fw fa-shopping-cart"></i><br>Keranjang</a>
+                     </button>
+                     <button class="btn btn-success btn-xl text-uppercase buttonBuah"  type="button"><a class="btn btn-success btn-xl text-uppercase" tombol"  onclick="location.href='Pembayaran.html'"><i class="fa fa-fw  fa-credit-card"></i><br>Beli Ajalah</a>
+                     </button>
                   </div>
                 </div>
               </div>

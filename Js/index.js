@@ -33,15 +33,9 @@ fetch("https://west-broad-gerbil.glitch.me/sayur")
                         ${sayur.stok} Kg
                       </li>
                     </ul>
-
-                    <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                      <span class="material-icons"> add_shopping_cart </span> <br />
-                      Masukan ke Keranjang</button
-                    ><br /><br />
-                    <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                      <span class="material-icons"> local_atm </span> <br />
-                      Beli Sekarang
-                    </button>
+                    <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button" onclick="location.href='list-barang.html'">
+                    
+                    Lihat List Barang</button>
                   </div>
                 </div>
               </div>
@@ -86,14 +80,9 @@ fetch("https://west-broad-gerbil.glitch.me/buah")
                       </li>
                     </ul>
 
-                    <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                      <span class="material-icons"> add_shopping_cart </span> <br />
-                      Masukan ke Keranjang</button
-                    ><br /><br />
-                    <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                      <span class="material-icons"> local_atm </span> <br />
-                      Beli Sekarang
-                    </button>
+                    <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button" onclick="location.href='list-barang.html'">
+                    
+                    Lihat List Barang</button>
                   </div>
                 </div>
               </div>
