@@ -65,9 +65,9 @@ sayur.forEach((sayur) => {
   let quantity = parseInt(document.getElementById("numberPlace").value);
   quantity++;
 
-  let plusbutton = document.querySelector(`#plus-${sayur.id}`);
+  // let plusbutton = document.querySelector(`#plus-${sayur.id}`);
 
-  let minusbutton = document.querySelector(`#minus-${sayur.id}`);
+  // let minusbutton = document.querySelector(`#minus-${sayur.id}`);
 
   // // Fungsi tambah kuantitas Sayur
   // plusbutton.addEventListener("click", (e) => {
@@ -169,8 +169,8 @@ buah.forEach((buah) => {
 
     `;
   // Fungsi tambah kuantitas Buah
-  let plusbutton1 = document.getElementById(`tambah-${buah.id}`);
-  let minusbutton1 = document.getElementById(`kurang-${buah.id}`);
+  // let plusbutton1 = document.getElementById(`tambah-${buah.id}`);
+  // let minusbutton1 = document.getElementById(`kurang-${buah.id}`);
 
   let quantity1 = parseInt(document.getElementById("numberBuah").value);
   quantity1++;
@@ -195,7 +195,6 @@ buah.forEach((buah) => {
   // });
   let hapusButton = document.querySelector(`#hapusitem-${buah.id}`);
   let hapusBuah = document.querySelector(`#keranjang-${buah.id}`);
-  console.log(hapusBuah);
 
   hapusButton.onclick = function () {
     alert("Data sudah dihapus");
@@ -234,24 +233,30 @@ buah.forEach((buah) => {
 // // let hapusSayur = items.find((cartsayur) => {
 // //   return cartsayur.id === Number(id);
 // // });
-let total = document.getElementById("totalpembayaran2");
+let jumlah = document.getElementById("jumlahbarangsemua");
+let total = document.getElementById("totalpembayaransemua");
+
+let jumlahSayur = parseInt(document.getElementById("jumlahbarang").innerHTML);
+let jumlahBuah = parseInt(document.getElementById("jumlahbarang1").innerHTML);
+
 let totalsayur = parseInt(document.getElementById("totalpembayaran").innerHTML);
 let totalbuah = parseInt(document.getElementById("totalpembayaran1").innerHTML);
-console.log(totalbuah);
 
+// console.log(totalbuah);
+
+jumlah.textContent = jumlahSayur + jumlahBuah;
 total.textContent = totalsayur + totalbuah;
 
-let tombolCheckout = document.querySelector("#tombolcheckout");
-let total1 = parseInt(document.getElementById("totalpembayaran2").innerHTML);
+let tombol = document.getElementById("tombol");
+let jumlah1 = parseInt(document.getElementById("jumlahbarangsemua").innerHTML);
+let total1 = parseInt(document.getElementById("totalpembayaransemua").innerHTML);
 
-tombolCheckout.addEventListener("click", (e) => {
-  e.preventDefault;
-  alert("sajad");
+tombol.addEventListener("click", (e) => {
   let TotalHarga = {
     Key: "0",
     harga: total1,
+    jumlah: jumlah1,
   };
   dataHarga.push(TotalHarga);
-  let harga = JSON.stringify(dataHarga);
-  localStorage.setItem("totalharga", harga);
+  localStorage.setItem("totalharga", JSON.stringify(dataHarga));
 });
