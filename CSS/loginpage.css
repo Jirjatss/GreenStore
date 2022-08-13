@@ -213,3 +213,7 @@ body {
 .block:after {
   filter: blur(40px);
 }
+
+.hide {
+  display: none;
+}

@@ -152,24 +152,30 @@ body {
   }
 }
 /* Kuantitas */
-#minus,
-#plus,
-#tambah,
-#kurang {
+.minus,
+.plus,
+.tambah,
+.kurang {
   height: 25px;
   width: 25px;
-  border: 1px black solid;
-  border-radius: 50%;
+  border: 1px black solid !important;
+  border-radius: 50% !important;
 }
-#minus:hover,
-#kurang:hover {
-  background-color: red;
+.minus,
+.kurang {
+  background-color: red !important;
   border: none;
 }
-#plus:hover,
-#tambah:hover {
-  background-color: green;
+.plus,
+.tambah {
+  background-color: green !important;
   border: none;
+}
+.minus:hover,
+.kurang:hover,
+.plus:hover,
+.tambah:hover {
+  background-color: black !important;
 }
 #numberPlace,
 #numberBuah {

@@ -29,10 +29,12 @@
               <li class="nav-item">
                 <a class="nav-link" href="list-barang.html">List Barang</a>
               </li>
-              <div class="dropdown">
-                <a style="color: white" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"> Profil </a>
+              <div class="dropdown" style="margin-top: 0.3rem">
+                <a style="color: white" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"> <span class="material-icons"> account_circle </span> </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="registerPage.html">Daftar</a></li>
                   <li><a class="dropdown-item" href="keranjang-belanja.html">Keranjang</a></li>
+                  <li><a class="dropdown-item" href="Pembayaran.html">Pembayaran</a></li>
                   <li><a class="dropdown-item" href="Pemesanan.html">Pemesanan</a></li>
                 </ul>
               </div>
@@ -69,8 +71,9 @@
                 <div>
                   <p id="hasil"></p>
                 </div>
-                <p style="font-size: 250">Belum punya akun? <a href="registerPage.html" style="text-decoration: none; color: green; font-size: 250">Daftar Sekarang!</a></p>
-                <input id="submit" type="submit" class="button" value="Masuk" />
+                <p style="font-size: 250" id="register">Belum punya akun? <a href="registerPage.html" style="text-decoration: none; color: green; font-size: 250">Daftar Sekarang!</a></p>
+                <button id="submit" type="submit" class="button"  >Masuk</button>
+
                 <p id="hasil" class="hasil"></p>
               </fieldset>
             </form>
@@ -78,6 +81,32 @@
       </div>
 
       <!-- Popup -->
+      <!-- <div class="Populer-modal modal fade" id="popup-login" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="close-modal" data-bs-dismiss="modal"><b>Tutup</b></div>
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <div class="modal-body">
+                    <header class="masthead">
+                      <div class="container-fluid halaman">
+                        <div style="background-color: rgba(0, 0, 0, 0.5); border-radius: 10px;">
+                          <div class="masthead-subheading">Green Store</div>
+                          <div style="z-index: 1" class="masthead-heading">Beli Semaunya, Bayar Seadanya</div>
+                        </div>
+                      </div>
+                    </header>
+
+                    <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button"><a href="Pemesanan.html"></a>
+                      Anda Telah Login</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
     </section>
     <script src="Js/login.js"></script>
     <script src="vendor/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>

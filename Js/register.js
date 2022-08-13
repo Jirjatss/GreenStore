@@ -2,6 +2,7 @@ let form = document.getElementById("form");
 let submit = document.getElementById("submit");
 let hasil = document.getElementById("hasil");
 let hasilregister = [];
+let hapusLogin = document.getElementById("login");
 submit.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -35,6 +36,10 @@ submit.addEventListener("click", (e) => {
   }
   if (email_status && password_status && nama && konfirpassword) {
     simpanData();
+    hasil.style.color = "green";
+    hasil.innerHTML = "Anda Berhasil Mendaftar";
+    hapusLogin.remove();
+    submit.innerHTML = `<button id="submit" type="submit" class="button"  onclick="location.href='loginpage.html'">Lanjutkan Kogin</button>`;
   } else {
     hasil.style.color = "red";
     hasil.innerHTML = "Enter valid data";
