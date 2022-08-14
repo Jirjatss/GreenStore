@@ -19,79 +19,95 @@
 let array = [];
 let array1 = [];
 let dataHarga = [];
+datakuantitiy = [];
+datakuantitiy1 = [];
 
 let keranjangBelanjaSayur = document.getElementById("keranjang-belanjaSayur");
 let sayur = JSON.parse(localStorage.getItem("cartsayur"));
-sayur.forEach((sayur) => {
+
+const convert = (arr) => {
+  const res = {};
+  arr.forEach((obj) => {
+    const key = `${obj.id}`;
+    if (!res[key]) {
+      res[key] = { ...obj, count: 0 };
+    }
+    res[key].count += 1;
+  });
+  return Object.values(res);
+};
+
+let reduceSayur = convert(sayur);
+
+reduceSayur.forEach((sayur) => {
   keranjangBelanjaSayur.innerHTML += `
     <div class="row d-flex justify-content-between keranjangbelanja" id="keranjang-${sayur.id}">
-    <div class="col-2 rincianbarang kata form-check d-flex justify-content-center" id=${sayur.id}>
-    <button  class="buttoncheckout"><span class="material-icons">
-    add_circle
-    </span>
-    </button>
-    </div>
   <div class="col-2 rincianbarang gambar" style="text-align: center;">
     <img src=${sayur.photo} alt="" style="width:50%">
   </div>
   <div class="col-2 rincianbarang kata nama" style="text-align: center;">
     ${sayur.name}   
   </div>
-  <div class="col-2 rincianbarang kata jenis" style="text-align: center;" id="value-${sayur.id}">
-  ${sayur.harga}
+  <div class="col-2 rincianbarang-${sayur.id}-${sayur.name}  kata jenis" style="text-align: center;" id="value-${sayur.id}">
+   Rp. <span class="total-rincianbarang" id="${sayur.id}-${sayur.name}_${sayur.harga}">${sayur.harga * sayur.count}</span>
   </div>
   <div class="col-2 rincianbarang kuantitas" style="text-align: center;">
-  <button class="btn btn-link px-2 minus" id="minus-${sayur.id}"
-  onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+  <button class="btn btn-link px-2 minusCartSayur" id="minus" name="${sayur.id}-${sayur.name}">
   <i class="bi bi-dash"></i>
   </button>
 
-  <input id="numberPlace" name="quantity" value="1" type="number" />
+  <input id="numberPlace" class="jumlah-quantity" min="1" name="${sayur.id}-${sayur.name}" value=${sayur.count} type="number" />
 
-  <button class="btn btn-link px-2 plus " id=plus-${sayur.id} value="1"
-  onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+  <button class="btn btn-link px-2 plusCartSayur" name="${sayur.id}-${sayur.name}" id="plus" value="1">
   <i class="bi bi-plus"></i>
-  </button> 
+  </button>
 </div>
   <div class="col-2 rincianbarang kata" style="text-align: center;">
   <button id="hapusitem-${sayur.id}" ><span class="material-icons">
   delete
   </span>
   </button>
-  </div>
-  </div>
+    </div>
+    </div>
 
     `;
-  let quantity = parseInt(document.getElementById("numberPlace").value);
-  quantity++;
+  let plusbutton = document.querySelectorAll(`.plusCartSayur`);
+  let minusbutton = document.querySelectorAll(".minusCartSayur");
+  let totalHargaSayur = document.querySelectorAll(".total-rincianbarang");
 
-  // let plusbutton = document.querySelector(`#plus-${sayur.id}`);
+  plusbutton.forEach((element) => {
+    element.addEventListener("click", function (event) {
+      let quantityFind = document.querySelectorAll(`.jumlah-quantity`);
+      quantityFind.forEach((quantity) => {
+        if (quantity.name === element.name) {
+          quantity.value = Number(quantity.value) + 1;
+          totalHarga = [];
+        }
+      });
+      totalHargaSayur.forEach((total) => {
+        if (total.id.split("_")[0] === element.name) {
+          total.textContent = Number(total.textContent) + Number(total.id.split("_")[1]);
+        }
+      });
+    });
+  });
 
-  // let minusbutton = document.querySelector(`#minus-${sayur.id}`);
+  minusbutton.forEach((element) => {
+    element.addEventListener("click", function (event) {
+      let quantityFind = document.querySelectorAll(`.jumlah-quantity`);
+      quantityFind.forEach((quantity) => {
+        if (quantity.name === element.name) {
+          quantity.value = Number(quantity.value) - 1;
+        }
+      });
 
-  // // Fungsi tambah kuantitas Sayur
-  // plusbutton.addEventListener("click", (e) => {
-  //   e.preventDefault();
-
-  //   let harga = document.querySelector(`#value-${sayur.id}`);
-  //   let nilai = `${sayur.harga}`;
-  //   // console.log(nilai);
-  //   let quantitySayur = parseInt(document.getElementById("numberPlace").value);
-  //   quantitySayur++;
-  //   let set = quantity++ * nilai;
-  //   harga.innerHTML = `Rp. ${set} (${quantitySayur})`;
-  // });
-  // // Fungsi kurang kuantitas Sayur
-  // minusbutton.addEventListener("click", (e) => {
-  //   e.preventDefault();
-  //   quantity--;
-  //   let harga1 = document.getElementById(`value-${sayur.id}`);
-  //   let nilai1 = parseInt(`${sayur.harga}`);
-  //   let set = nilai1 * (quantity - 1);
-  //   harga1.innerHTML = `Rp. ${set} (${quantity - 1})`;
-  // });
-
-  //hapus element
+      totalHargaSayur.forEach((total) => {
+        if (total.id.split("_")[0] === element.name) {
+          total.textContent = Number(total.textContent) - Number(total.id.split("_")[1]);
+        }
+      });
+    });
+  });
   let hapusButton = document.querySelector(`#hapusitem-${sayur.id}`);
   let hapusSayur = document.querySelector(`#keranjang-${sayur.id}`);
 
@@ -107,92 +123,112 @@ sayur.forEach((sayur) => {
   function refresh() {
     window.location.reload();
   }
-
-  let hargabarang = parseInt(document.querySelector(`#value-${sayur.id}`).innerHTML);
+  var totkun = 0;
   var total = 0;
+  let quantity = parseInt(document.getElementById("numberPlace").value);
+  // console.log(quantity);
+  let hargabarang = parseInt(document.getElementById(`${sayur.id}-${sayur.name}_${sayur.harga}`).innerHTML);
+  datakuantitiy.push(quantity);
   array.push(hargabarang);
+  // console.log(array);
+  // console.log(hargabarang);
   for (i = 0; i < array.length; i++) {
     total += array[i];
     // console.log(total);
   }
-  let cartSayurButtons = document.querySelectorAll(".buttoncheckout");
-  cartSayurButtons.forEach(() => {
-    let jumlahbarang = document.getElementById("jumlahbarang");
-    let totalpembayaran = document.getElementById("totalpembayaran");
-    jumlahbarang.innerHTML = quantity++ - 1;
-    totalpembayaran.innerHTML = `${total}`;
-  });
+
+  for (i = 0; i < datakuantitiy.length; i++) {
+    totkun += datakuantitiy[i];
+    console.log(totkun);
+  }
+  let jumlahbarang = document.querySelector("#jumlahbarang");
+  let totalpembayaran = document.getElementById("totalpembayaran");
+  jumlahbarang.innerHTML = totkun;
+  totalpembayaran.innerHTML = total;
 });
+
+// let quantity = parseInt(document.getElementById("numberBuah").value);
+// quantity++;
+
+// cartSayurButtons.forEach(() => {
+
+// });
+//hapus element
 
 let keranjangBelanjaBuah = document.getElementById("keranjang-belanjaBuah");
 let buah = JSON.parse(localStorage.getItem("cartbuah"));
+let reduceBuah = convert(buah);
 
-buah.forEach((buah) => {
+reduceBuah.forEach((buah) => {
   // console.log(buah);
   keranjangBelanjaBuah.innerHTML += `
-    <div class="row d-flex justify-content-between keranjangbelanja" id="keranjang-${buah.id}">
-    <div class="col-2 rincianbarang kata form-check d-flex justify-content-center" id=${buah.id}>
-    <button  class="buttoncheckout1"><span class="material-icons">
-    add_circle
-    </span>
-    </button>
-  </div>
+  <div class="row d-flex justify-content-between keranjangbelanja" id="keranjang-${buah.id}">
   <div class="col-2 rincianbarang gambar" style="text-align: center;">
     <img src=${buah.photo} alt="" style="width:50%">
   </div>
   <div class="col-2 rincianbarang kata nama" style="text-align: center;">
-  ${buah.name}
+    ${buah.name}   
   </div>
-  <div class="col-2 rincianbarang kata jenis" style="text-align: center;" id="buah-${buah.id}">
- ${buah.harga}
+  <div class="col-2 rincianbarang-${buah.id}-${buah.name}  kata jenis" style="text-align: center;" id="value-${buah.id}">
+   Rp. <span class="total-rincianbarang" id="${buah.id}-${buah.name}_${buah.harga}">${buah.harga * buah.count}</span>
   </div>
   <div class="col-2 rincianbarang kuantitas" style="text-align: center;">
-  <button class="btn btn-link px-2 kurang" id="kurang-${buah.id}"
-  onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+  <button class="btn btn-link px-2 minusCartBuah" id="minus" name="${buah.id}-${buah.name}">
   <i class="bi bi-dash"></i>
   </button>
 
-  <input id="numberBuah" name="quantity" value="1" type="number" />
+  <input id="numberBuah" class="jumlah-quantity" min="1" name="${buah.id}-${buah.name}" value=${buah.count} type="number" />
 
-  <button class="btn btn-link px-2 tambah" id="tambah-${buah.id}"
-  onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+  <button class="btn btn-link px-2 plusCartBuah" name="${buah.id}-${buah.name}" id="plus" value="1">
   <i class="bi bi-plus"></i>
   </button>
-  </div>
+</div>
   <div class="col-2 rincianbarang kata" style="text-align: center;">
-    <button id="hapusitem-${buah.id}" ><span class="material-icons">
-      delete
-      </span>
-      </button>
+  <button id="hapusitem-${buah.id}" ><span class="material-icons">
+  delete
+  </span>
+  </button>
     </div>
     </div>
 
     `;
-  // Fungsi tambah kuantitas Buah
-  // let plusbutton1 = document.getElementById(`tambah-${buah.id}`);
-  // let minusbutton1 = document.getElementById(`kurang-${buah.id}`);
+  let plusbutton = document.querySelectorAll(`.plusCartBuah`);
+  let minusbutton = document.querySelectorAll(".minusCartBuah");
+  let totalHargaSayur = document.querySelectorAll(".total-rincianbarang");
 
-  let quantity1 = parseInt(document.getElementById("numberBuah").value);
-  quantity1++;
+  plusbutton.forEach((element) => {
+    element.addEventListener("click", function (event) {
+      let quantityFind = document.querySelectorAll(`.jumlah-quantity`);
+      quantityFind.forEach((quantity) => {
+        if (quantity.name === element.name) {
+          quantity.value = Number(quantity.value) + 1;
+          totalHarga = [];
+        }
+      });
+      totalHargaSayur.forEach((total) => {
+        if (total.id.split("_")[0] === element.name) {
+          total.textContent = Number(total.textContent) + Number(total.id.split("_")[1]);
+        }
+      });
+    });
+  });
 
-  // plusbutton1.addEventListener("click", function (event) {
-  //   event.preventDefault();
+  minusbutton.forEach((element) => {
+    element.addEventListener("click", function (event) {
+      let quantityFind = document.querySelectorAll(`.jumlah-quantity`);
+      quantityFind.forEach((quantity) => {
+        if (quantity.name === element.name) {
+          quantity.value = Number(quantity.value) - 1;
+        }
+      });
 
-  //   let harga = document.getElementById(`buah-${buah.id}`);
-  //   let nilai = parseInt(`${buah.harga}`);
-  //   // console.log(nilai);
-
-  //   let set = quantity1++ * nilai;
-  //   harga.innerHTML = `Rp. ${set} (${quantity1 - 1 - 1})`;
-  // });
-  // minusbutton1.addEventListener("click", function (event) {
-  //   event.preventDefault();
-  //   quantity1--;
-  //   let harga1 = document.getElementById(`buah-${buah.id}`);
-  //   let nilai1 = parseInt(`${buah.harga}`);
-  //   let set = nilai1 * (quantity1 - 1);
-  //   harga1.innerHTML = `Rp. ${set} (${quantity1 - 1 - 1})`;
-  // });
+      totalHargaSayur.forEach((total) => {
+        if (total.id.split("_")[0] === element.name) {
+          total.textContent = Number(total.textContent) - Number(total.id.split("_")[1]);
+        }
+      });
+    });
+  });
   let hapusButton = document.querySelector(`#hapusitem-${buah.id}`);
   let hapusBuah = document.querySelector(`#keranjang-${buah.id}`);
 
@@ -201,28 +237,35 @@ buah.forEach((buah) => {
     hapusBuah.remove();
     const items = JSON.parse(localStorage.getItem("cartbuah"));
     const filtered = items.filter((item) => item.id !== buah.id);
-    localStorage.setItem("cartbuah", JSON.stringify(filtered));
+    localStorage.setItem("cartsayur", JSON.stringify(filtered));
     refresh();
   };
 
   function refresh() {
     window.location.reload();
   }
-  let hargabarang1 = parseInt(document.querySelector(`#buah-${buah.id}`).innerHTML);
-  // console.log(hargabarang1);
-  var total1 = 0;
-  array1.push(hargabarang1);
+  var totkun = 0;
+  var total = 0;
+  let quantity = parseInt(document.getElementById("numberPlace").value);
+  // console.log(quantity);
+  let hargabarang = parseInt(document.getElementById(`${buah.id}-${buah.name}_${buah.harga}`).innerHTML);
+  datakuantitiy1.push(quantity);
+  array1.push(hargabarang);
+  // console.log(array);
+  // console.log(hargabarang);
   for (i = 0; i < array1.length; i++) {
-    total1 += array1[i];
-    // console.log(total1);
+    total += array1[i];
+    // console.log(total);
   }
-  let cartSayurButtons = document.querySelectorAll(".buttoncheckout1");
-  cartSayurButtons.forEach(() => {
-    let jumlahbarang = document.getElementById("jumlahbarang1");
-    let totalpembayaran = document.getElementById("totalpembayaran1");
-    jumlahbarang.innerHTML = quantity1++ - 1;
-    totalpembayaran.innerHTML = `${total1}`;
-  });
+
+  for (i = 0; i < datakuantitiy1.length; i++) {
+    totkun += datakuantitiy1[i];
+    console.log(totkun);
+  }
+  let jumlahbarang = document.querySelector("#jumlahbarang1");
+  let totalpembayaran = document.getElementById("totalpembayaran1");
+  jumlahbarang.innerHTML = totkun;
+  totalpembayaran.innerHTML = total;
 });
 
 // const items = JSON.parse(localStorage.getItem("cartsayur"));
@@ -256,6 +299,7 @@ tombol.addEventListener("click", (e) => {
     Key: "0",
     harga: total1,
     jumlah: jumlah1,
+    produk: produk,
   };
   dataHarga.push(TotalHarga);
   localStorage.setItem("totalharga", JSON.stringify(dataHarga));
