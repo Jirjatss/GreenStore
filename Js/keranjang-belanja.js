@@ -1,21 +1,3 @@
-// let cartSayur1 = [];
-// const isiLSCartSayur1 = localStorage.getItem("cart-sayur");
-
-// let addToCartSayur1 = (id) => {
-//   let objectSayurLocalStorage1 = JSON.parse(localStorage.getItem("cartsayur")); // ngambil dari local storage dengan key cartsayur
-//   let foundSayur1 = objectSayurLocalStorage1.find((cartsayur) => {
-//     return cartsayur.id === Number(id);
-//   });
-
-//   if (isiLSCartSayur1 === null) {
-//     cartSayur1.push(foundSayur1);
-//     localStorage.setItem("cart-sayur", JSON.stringify(cartSayur1));
-//   } else {
-//     cartSayur1 = JSON.parse(isiLSCartSayur1);
-//     cartSayur1.push(foundSayur1);
-//     localStorage.setItem("cart-sayur", JSON.stringify(cartSayur1));
-//   }
-// };
 let array = [];
 let array1 = [];
 let dataHarga = [];

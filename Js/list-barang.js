@@ -6,34 +6,73 @@ let cartSayur = [];
 let cartBuah = [];
 const isiLSCartSayur = localStorage.getItem("cartsayur");
 const isiLSCartBuah = localStorage.getItem("cartbuah");
+let login = false;
+let modalBody = document.querySelector(".modal-body");
 
 let addToCartSayur = (id) => {
-  let objectSayurLocalStorage = JSON.parse(localStorage.getItem("sayur")); // ngambil dari local storage dengan key sayur
-  let foundSayur = objectSayurLocalStorage.find((sayur) => {
-    return sayur.id === Number(id);
-  });
+  let found = localStorage.getItem("login");
+  if (found) {
+    let objectSayurLocalStorage = JSON.parse(localStorage.getItem("sayur")); // ngambil dari local storage dengan key sayur
+    let foundSayur = objectSayurLocalStorage.find((sayur) => {
+      return sayur.id === Number(id);
+    });
 
-  if (isiLSCartSayur === null) {
-    cartSayur.push(foundSayur);
-    localStorage.setItem("cartsayur", JSON.stringify(cartSayur));
+    if (isiLSCartSayur === null) {
+      cartSayur.push(foundSayur);
+      localStorage.setItem("cartsayur", JSON.stringify(cartSayur));
+    } else {
+      cartSayur = JSON.parse(isiLSCartSayur);
+      cartSayur.push(foundSayur);
+      localStorage.setItem("cartsayur", JSON.stringify(cartSayur));
+    }
   } else {
-    cartSayur = JSON.parse(isiLSCartSayur);
-    cartSayur.push(foundSayur);
-    localStorage.setItem("cartsayur", JSON.stringify(cartSayur));
+    modalBody.innerHTML = `
+    <header class="masthead">
+      <div class="container-fluid halaman">
+        <div style="background-color: rgba(0, 0, 0, 0.5); border-radius: 10px;">
+          <div class="masthead-subheading">Green Store</div>
+            <div style="z-index: 1" class="masthead-heading">Beli Semaunya, Bayar Seadanya</div>
+          </div>
+        </div>
+    </header>
+    <p >Silahkan Login Dulu</p>
+    <button class="btn btn-success btn-xl text-uppercase"  type="button" onclick="location.href='loginpage.html'" >
+       OK
+    </button>
+    `;
   }
 };
 let addToCartBuah = (id) => {
-  let objectBuahLocalStorage = JSON.parse(localStorage.getItem("buah")); // ngambil dari local storage dengan key buah
-  let foundBuah = objectBuahLocalStorage.find((buah) => {
-    return buah.id === Number(id);
-  });
-  if (isiLSCartBuah === null) {
-    cartBuah.push(foundBuah);
-    localStorage.setItem("cartbuah", JSON.stringify(cartBuah));
+  let found = localStorage.getItem("login");
+
+  if (found) {
+    let objectBuahLocalStorage = JSON.parse(localStorage.getItem("buah")); // ngambil dari local storage dengan key buah
+    let foundBuah = objectBuahLocalStorage.find((buah) => {
+      return buah.id === Number(id);
+    });
+    if (isiLSCartBuah === null) {
+      cartBuah.push(foundBuah);
+      localStorage.setItem("cartbuah", JSON.stringify(cartBuah));
+    } else {
+      cartBuah = JSON.parse(isiLSCartBuah);
+      cartBuah.push(foundBuah);
+      localStorage.setItem("cartbuah", JSON.stringify(cartBuah));
+    }
   } else {
-    cartBuah = JSON.parse(isiLSCartBuah);
-    cartBuah.push(foundBuah);
-    localStorage.setItem("cartbuah", JSON.stringify(cartBuah));
+    modalBody.innerHTML = `
+    <header class="masthead">
+      <div class="container-fluid halaman">
+        <div style="background-color: rgba(0, 0, 0, 0.5); border-radius: 10px;">
+          <div class="masthead-subheading">Green Store</div>
+            <div style="z-index: 1" class="masthead-heading">Beli Semaunya, Bayar Seadanya</div>
+          </div>
+        </div>
+    </header>
+    <p >Silahkan Login Dulu</p>
+    <button class="btn btn-success btn-xl text-uppercase"  type="button" onclick="location.href='loginpage.html'" >
+       OK
+    </button>
+    `;
   }
 };
 
@@ -91,8 +130,6 @@ fetch("https://west-broad-gerbil.glitch.me/sayur")
                     </ul>
 
                     <button class="btn btn-success btn-xl text-uppercase buttonSayur" id=${sayur.id}  type="button"><a class="btn btn-success btn-xl text-uppercase" tombol" data-bs-toggle="modal" href="#modalsayur"><i class="fa fa-fw fa-shopping-cart"></i><br>Keranjang</a>
-                     </button>
-                     <button class="btn btn-success btn-xl text-uppercase buttonSayur"  type="button"><a class="btn btn-success btn-xl text-uppercase" tombol"  onclick="location.href='Pembayaran.html'"><i class="fa fa-fw  fa-credit-card"></i><br>Beli Ajalah</a>
                      </button>
                   </div>
                 </div>
@@ -169,8 +206,6 @@ fetch("https://west-broad-gerbil.glitch.me/buah")
                     </ul>
 
                     <button class="btn btn-success btn-xl text-uppercase buttonBuah" id=${buah.id}  type="button"><a class="btn btn-success btn-xl text-uppercase" tombol" data-bs-toggle="modal" href="#modalsayur"><i class="fa fa-fw fa-shopping-cart"></i><br>Keranjang</a>
-                     </button>
-                     <button class="btn btn-success btn-xl text-uppercase buttonBuah"  type="button"><a class="btn btn-success btn-xl text-uppercase" tombol"  onclick="location.href='Pembayaran.html'"><i class="fa fa-fw  fa-credit-card"></i><br>Beli Ajalah</a>
                      </button>
                   </div>
                 </div>

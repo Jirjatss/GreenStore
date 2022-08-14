@@ -80,6 +80,7 @@ bayarButton.addEventListener("click", (e) => {
     bayarButton.remove();
     localStorage.removeItem("cartsayur");
     localStorage.removeItem("cartbuah");
+    localStorage.removeItem("totalharga");
   } else {
     alert("Masukan Data yang Valid");
   }
