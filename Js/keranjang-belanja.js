@@ -299,6 +299,7 @@ tombol.addEventListener("click", (e) => {
     Key: "0",
     harga: total1,
     jumlah: jumlah1,
+    produk: produk,
   };
   dataHarga.push(TotalHarga);
   localStorage.setItem("totalharga", JSON.stringify(dataHarga));
