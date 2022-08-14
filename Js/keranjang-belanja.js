@@ -21,6 +21,7 @@ let array1 = [];
 let dataHarga = [];
 datakuantitiy = [];
 datakuantitiy1 = [];
+namanama = [];
 
 let keranjangBelanjaSayur = document.getElementById("keranjang-belanjaSayur");
 let sayur = JSON.parse(localStorage.getItem("cartsayur"));
@@ -45,7 +46,7 @@ reduceSayur.forEach((sayur) => {
   <div class="col-2 rincianbarang gambar" style="text-align: center;">
     <img src=${sayur.photo} alt="" style="width:50%">
   </div>
-  <div class="col-2 rincianbarang kata nama" style="text-align: center;">
+  <div class="col-2 rincianbarang kata nama" style="text-align: center;" id="nama${sayur.id}">
     ${sayur.name}   
   </div>
   <div class="col-2 rincianbarang-${sayur.id}-${sayur.name}  kata jenis" style="text-align: center;" id="value-${sayur.id}">
@@ -125,13 +126,15 @@ reduceSayur.forEach((sayur) => {
   }
   var totkun = 0;
   var total = 0;
+
+  let gambarproduk = `${sayur.photo}`;
   let quantity = parseInt(document.getElementById("numberPlace").value);
-  // console.log(quantity);
   let hargabarang = parseInt(document.getElementById(`${sayur.id}-${sayur.name}_${sayur.harga}`).innerHTML);
+
+  namanama.push(gambarproduk);
   datakuantitiy.push(quantity);
   array.push(hargabarang);
-  // console.log(array);
-  // console.log(hargabarang);
+
   for (i = 0; i < array.length; i++) {
     total += array[i];
     // console.log(total);
@@ -139,7 +142,6 @@ reduceSayur.forEach((sayur) => {
 
   for (i = 0; i < datakuantitiy.length; i++) {
     totkun += datakuantitiy[i];
-    console.log(totkun);
   }
   let jumlahbarang = document.querySelector("#jumlahbarang");
   let totalpembayaran = document.getElementById("totalpembayaran");
@@ -160,15 +162,14 @@ let buah = JSON.parse(localStorage.getItem("cartbuah"));
 let reduceBuah = convert(buah);
 
 reduceBuah.forEach((buah) => {
-  // console.log(buah);
   keranjangBelanjaBuah.innerHTML += `
   <div class="row d-flex justify-content-between keranjangbelanja" id="keranjang-${buah.id}">
   <div class="col-2 rincianbarang gambar" style="text-align: center;">
     <img src=${buah.photo} alt="" style="width:50%">
   </div>
-  <div class="col-2 rincianbarang kata nama" style="text-align: center;">
-    ${buah.name}   
-  </div>
+  <div class="col-2 rincianbarang kata nama" style="text-align: center;" id="buah${buah.id}">
+  ${buah.name}   
+</div>
   <div class="col-2 rincianbarang-${buah.id}-${buah.name}  kata jenis" style="text-align: center;" id="value-${buah.id}">
    Rp. <span class="total-rincianbarang" id="${buah.id}-${buah.name}_${buah.harga}">${buah.harga * buah.count}</span>
   </div>
@@ -237,18 +238,22 @@ reduceBuah.forEach((buah) => {
     hapusBuah.remove();
     const items = JSON.parse(localStorage.getItem("cartbuah"));
     const filtered = items.filter((item) => item.id !== buah.id);
-    localStorage.setItem("cartsayur", JSON.stringify(filtered));
+    localStorage.setItem("cartbuah", JSON.stringify(filtered));
     refresh();
   };
 
   function refresh() {
     window.location.reload();
   }
+  let namaproduk = document.querySelector(`#buah${buah.id}`).innerHTML;
   var totkun = 0;
   var total = 0;
+
   let quantity = parseInt(document.getElementById("numberPlace").value);
   // console.log(quantity);
   let hargabarang = parseInt(document.getElementById(`${buah.id}-${buah.name}_${buah.harga}`).innerHTML);
+
+  namanama.push(namaproduk);
   datakuantitiy1.push(quantity);
   array1.push(hargabarang);
   // console.log(array);
@@ -262,20 +267,13 @@ reduceBuah.forEach((buah) => {
     totkun += datakuantitiy1[i];
     console.log(totkun);
   }
+
   let jumlahbarang = document.querySelector("#jumlahbarang1");
   let totalpembayaran = document.getElementById("totalpembayaran1");
   jumlahbarang.innerHTML = totkun;
   totalpembayaran.innerHTML = total;
 });
 
-// const items = JSON.parse(localStorage.getItem("cartsayur"));
-// // let hapusSayur = items.find((cartsayur) => {
-// //   return cartsayur.id === Number(id);
-// // });
-
-// // let hapusSayur = items.find((cartsayur) => {
-// //   return cartsayur.id === Number(id);
-// // });
 let jumlah = document.getElementById("jumlahbarangsemua");
 let total = document.getElementById("totalpembayaransemua");
 
@@ -299,7 +297,6 @@ tombol.addEventListener("click", (e) => {
     Key: "0",
     harga: total1,
     jumlah: jumlah1,
-    produk: produk,
   };
   dataHarga.push(TotalHarga);
   localStorage.setItem("totalharga", JSON.stringify(dataHarga));

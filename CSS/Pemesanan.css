@@ -78,3 +78,9 @@
 .rincianpemesanan .rincianstatus {
   margin-top: 2rem;
 }
+
+#pemesanan {
+  font-family: "Sarabun", sans-serif;
+  color: black;
+  font-weight: bold;
+}
