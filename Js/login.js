@@ -3,7 +3,7 @@ let submit = document.getElementById("submit");
 let hasil = document.getElementById("hasil");
 let hasilLogin = [];
 let hapusRegister = document.getElementById("register");
-
+let login = false;
 submit.addEventListener("click", function (event) {
   event.preventDefault();
 
@@ -24,10 +24,6 @@ submit.addEventListener("click", function (event) {
 
   if (email_status && password_status) {
     simpanData();
-    hasil.style.color = "green";
-    hasil.innerHTML = "Anda Berhasil Login";
-    hapusRegister.classList.add("hide");
-    submit.innerHTML = `<button id="submit" type="submit" class="button"  onclick="location.href='index.html'">Lanjutkan Ke Home</button>`;
   } else {
     hasil.style.color = "red";
     hasil.innerHTML = "Enter valid data";
@@ -42,10 +38,25 @@ function simpanData() {
     mail: email.value,
     Password: password.value,
   };
-  hasilLogin.push(HasilLogin);
-  let Login = JSON.stringify(hasilLogin);
-  localStorage.setItem("login", Login);
+  console.log(HasilLogin);
+  let registerUser = JSON.parse(localStorage.getItem("register"));
+  if (registerUser) {
+    let found = registerUser.find((user) => {
+      return HasilLogin.mail === user.mail && HasilLogin.Password === user.Password;
+    });
+    if (found) {
+      console.log(found);
+      localStorage.setItem("login", JSON.stringify(HasilLogin));
+      hasil.style.color = "green";
+      hasil.innerHTML = "Anda Berhasil Login";
+      hapusRegister.classList.add("hide");
+      submit.innerHTML = `<button id="submit" type="submit" class="button"  onclick="location.href='index.html'">Lanjutkan Ke Home</button>`;
+    } else {
+      alert("Akun tidak ditemukan");
+    }
+  }
 }
-function hapus() {
-  form.reset();
-}
+
+// function hapus() {
+//   form.reset();
+// }
