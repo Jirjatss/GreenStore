@@ -1,4 +1,5 @@
 let datapembayaran = [];
+let isiPembayaran = localStorage.getItem("databayar");
 
 let rincianpembayaran = document.getElementById("pembayaran");
 let pembayaran = JSON.parse(localStorage.getItem("totalharga"));
@@ -28,8 +29,8 @@ pembayaran.forEach((harga) => {
               <td class="text-dark" style="text-align: center;">${harga.harga}</td>
             </tr>
             <tr>
-              <td><b class=>Biaya Pengiriman</b></td>
-              <td class="text-dark" style="text-align: center;">Rp. 40000</td>
+              <td><b class=>Biaya Pengiriman (Rp)</b></td>
+              <td class="text-dark" style="text-align: center;">40000</td>
             </tr>
             <tr>
               <td class=><b>Total Pembayaran (Rp)</b></td>
@@ -76,7 +77,9 @@ bayarButton.addEventListener("click", (e) => {
   if (nama_status === true && address_status === true && date_status === true && phone_status === true) {
     simpanDataBayar();
     caption.classList.remove("hide");
-    bayarButton.classList.add("hide");
+    bayarButton.remove();
+    localStorage.removeItem("cartsayur");
+    localStorage.removeItem("cartbuah");
   } else {
     alert("Masukan Data yang Valid");
   }
@@ -100,6 +103,13 @@ function simpanDataBayar() {
     jumlah: jumlahbayar,
     harga: hargabayar,
   };
-  datapembayaran.push(DataPembayaran);
-  localStorage.setItem("dataBayar", JSON.stringify(datapembayaran));
+
+  if (isiPembayaran === null) {
+    datapembayaran.push(DataPembayaran);
+    localStorage.setItem("dataBayar", JSON.stringify(datapembayaran));
+  } else {
+    datapembayaran.JSON.parse(isiPembayaran);
+    datapembayaran.push(DataPembayaran);
+    localStorage.setItem("dataBayar", JSON.stringify(datapembayaran));
+  }
 }
