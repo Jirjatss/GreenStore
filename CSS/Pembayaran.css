@@ -56,19 +56,9 @@ form {
   padding-top: 1rem;
   margin-bottom: 2rem;
   border-radius: 10px;
+  padding: 1.5rem;
 }
-#rincianpembayaran {
-  margin-top: 1rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-bottom: 2rem;
-  font-size: 0.8rem;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  margin-bottom: 2rem;
-  margin-left: 6rem;
-  margin-right: 6rem;
-}
+
 .bg-light {
   background-color: aqua;
 }
@@ -144,4 +134,7 @@ form {
   width: 100%;
 }
 
+.hide {
+  display: none;
+}
 /*  */
