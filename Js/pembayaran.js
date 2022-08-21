@@ -10,39 +10,39 @@ pembayaran.forEach((harga) => {
   let totalsemua = harga.harga + ongkir;
 
   rincianpembayaran.innerHTML = `
-    <div class="row">
-      <div class="col" id="rincianpembayaran">
-        <h5 class="text-dark" style="text-align: center;">Rincian Pembayaran</h5>
-        <hr>
-        <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <tr></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><b class=>Jumlah Barang</b></td>
-              <td class="text-dark" id="jumlahbayar" style="text-align: center;">${harga.jumlah}</td>
-            </tr>
-            <tr>
-              <td><b class=>Total Harga Barang (Rp)</b></td>
-              <td class="text-dark" style="text-align: center;">${harga.harga}</td>
-            </tr>
-            <tr>
-              <td><b class=>Biaya Pengiriman (Rp)</b></td>
-              <td class="text-dark" style="text-align: center;">40000</td>
-            </tr>
-            <tr>
-              <td class=><b>Total Pembayaran (Rp)</b></td>
-              <td class="text-dark" id="hargabayar"style="text-align: center;">${totalsemua} </td>
-            </tr>
-          </tbody>
-        </table>
-        
-        </div>
-      </div>
+  <div class="row">
+  <div class="col-12 col-sm-12" id="rincianpembayaran">
+    <h5 class="text-dark" style="text-align: center;">Rincian Pembayaran</h5>
+    <hr>
+    <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b class=>Jumlah Barang</b></td>
+          <td class="text-dark" id="jumlahbayar" style="text-align: center;">${harga.jumlah}</td>
+        </tr>
+        <tr>
+          <td><b class=>Total Harga Barang (Rp)</b></td>
+          <td class="text-dark" style="text-align: center;">${harga.harga}</td>
+        </tr>
+        <tr>
+          <td><b class=>Biaya Pengiriman (Rp)</b></td>
+          <td class="text-dark" style="text-align: center;">40000</td>
+        </tr>
+        <tr>
+          <td class=><b>Total Pembayaran (Rp)</b></td>
+          <td class="text-dark" id="hargabayar"style="text-align: center;">${totalsemua} </td>
+        </tr>
+      </tbody>
+    </table>
+    
     </div>
   </div>
+</div>
+</div>
   `;
 });
 let bayarbut = document.getElementById("bayar1");

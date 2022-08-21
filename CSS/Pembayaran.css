@@ -66,6 +66,10 @@ form {
   border-radius: 10px;
   margin-bottom: 2rem;
 }
+#rincianpembayaran {
+  background-color: rgb(206, 206, 218);
+  border-radius: 10px;
+}
 /* Popup */
 .Populer-modal .modal-dialog {
   margin: 1rem;
