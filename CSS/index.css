@@ -10,6 +10,9 @@
   padding-top: 15rem;
   padding-bottom: 5rem;
 }
+#tagline {
+  font-size: 35rem;
+}
 .navbar {
   margin-top: 1rem;
   margin-left: 5%;
